@@ -56,11 +56,11 @@ export default function Home() {
           {/* Large anchor watermark - using the circle logo (just anchor) */}
           <div className="pointer-events-none absolute inset-0 overflow-hidden">
             <Image
-              src="/Image.png"
+              src="/brand/logo-circle-cream.png"
               alt=""
               width={600}
               height={600}
-              className="absolute left-1/3 bottom-0 h-[550px] w-[550px] -translate-x-1/2 translate-y-[15%] object-contain opacity-[0.08] md:h-[700px] md:w-[700px]"
+              className="absolute right-0 bottom-0 h-[550px] w-[550px] translate-x-[20%] translate-y-[15%] object-contain opacity-[0.06] md:h-[700px] md:w-[700px]"
               aria-hidden="true"
             />
                       </div>
@@ -103,10 +103,10 @@ export default function Home() {
                 <div className="relative rounded-xl border border-white/10 bg-white/[0.02] p-6">
                   <div className="flex items-center justify-center">
                     <Image
-                      src="/brand/logo-circle-cream.png"
+                      src="/brand/logo-center-orange.png"
                       alt="Anchor Point Accounting"
-                      width={140}
-                      height={140}
+                      width={120}
+                      height={120}
                     />
                   </div>
                   <div className="mt-4 text-center">
