@@ -14,15 +14,15 @@ export default function ContactPage() {
               priority
             />
           </a>
-          <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
-            <a href="/" className="text-white/80 hover:text-white">Home</a>
-            <a href="/services" className="text-white/80 hover:text-white">Services</a>
-            <a href="/contact" className="text-white">Contact</a>
+          <nav className="hidden items-center gap-7 text-[13px] font-semibold uppercase tracking-wide md:flex">
+            <a href="/" className="border-b-2 border-transparent pb-0.5 text-white/70 transition-colors hover:text-white">Home</a>
+            <a href="/services" className="border-b-2 border-transparent pb-0.5 text-white/70 transition-colors hover:text-white">Services</a>
+            <a href="/contact" className="border-b-2 border-white pb-0.5 text-white">Contact</a>
             <a
               href="https://anchorpointaccounting.taxdome.com"
               target="_blank"
               rel="noreferrer"
-              className="ml-2 inline-flex items-center justify-center rounded-full bg-[color:var(--ap-burgundy)] px-4 py-2 text-white transition-colors hover:bg-[color:var(--ap-burgundy)]/90"
+              className="ml-2 inline-flex items-center justify-center rounded-full bg-[color:var(--ap-burgundy)] px-4 py-2 normal-case tracking-normal text-white transition-colors hover:bg-[color:var(--ap-burgundy)]/90"
             >
               Client Portal
             </a>
