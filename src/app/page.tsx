@@ -159,7 +159,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+        <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
           <div className="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between">
             <div>
               <h2
@@ -180,7 +180,7 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             <a
               href="/services"
               className="group flex flex-col rounded-lg border border-black/8 bg-white p-5 transition-all hover:border-[color:var(--ap-burgundy)]/20 hover:shadow-sm"
@@ -259,20 +259,21 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-6 pb-20 md:pb-24">
-          <div className="rounded-lg border border-black/8 bg-white p-6 md:p-8">
-            <div className="mb-6">
+        {/* Meet the Team - Hidden for now
+        <section className="border-y border-[color:var(--ap-navy)]/8 bg-white py-16 md:py-20">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="mb-8 text-center">
               <h2
                 className="text-2xl font-semibold text-[color:var(--ap-navy)] md:text-3xl"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 Meet the Team
               </h2>
-              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[color:var(--ap-navy)]/60">
+              <p className="mx-auto mt-2 max-w-lg text-sm leading-relaxed text-[color:var(--ap-navy)]/60">
                 Experienced professionals dedicated to your financial success.
               </p>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               <div className="text-center">
                 <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full border border-[color:var(--ap-navy)]/15 bg-[color:var(--ap-navy)]/5">
                   <span className="text-sm font-semibold text-[color:var(--ap-navy)]">LH</span>
@@ -308,8 +309,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+        */}
 
-        <section className="bg-[color:var(--ap-cream)] py-20 md:py-24">
+        <section className="border-t border-[color:var(--ap-navy)]/8 bg-white py-16 md:py-20">
           <div className="mx-auto max-w-6xl px-6">
             <div className="mb-10 text-center">
               <h2
