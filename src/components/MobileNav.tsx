@@ -94,22 +94,75 @@ export default function MobileNav({ currentPage = "home" }: MobileNavProps) {
               </svg>
               Contact
             </a>
-            <a
-              href="https://anchorpointaccounting.taxdome.com"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-semibold text-white/70 transition-colors hover:bg-white/5 hover:text-white"
-            >
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-              </svg>
-              Client Portal
-            </a>
+            <div className="mt-2 border-t border-white/10 pt-3">
+              <p className="mb-2 px-4 text-xs font-semibold uppercase tracking-wide text-white/40">Quick Links</p>
+              <a
+                href="https://sa.www4.irs.gov/wmr/"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-semibold text-white/70 transition-colors hover:bg-white/5 hover:text-white"
+              >
+                <svg className="h-5 w-5 text-[color:var(--ap-burnt-orange)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                Where's My Refund?
+              </a>
+              <a
+                href="https://sa.www4.irs.gov/bola/"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-semibold text-white/70 transition-colors hover:bg-white/5 hover:text-white"
+              >
+                <svg className="h-5 w-5 text-[color:var(--ap-burnt-orange)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                IRS Tax History
+              </a>
+              <a
+                href="https://anchorpointaccounting.taxdome.com"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-semibold text-[color:var(--ap-burnt-orange)] transition-colors hover:bg-white/5"
+              >
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+                Client Portal
+              </a>
+            </div>
           </nav>
 
+          {/* Hours */}
+          <div className="border-t border-white/10 px-4 py-4">
+            <p className="mb-2 px-4 text-xs font-semibold uppercase tracking-wide text-white/50">Office Hours</p>
+            <div className="rounded-lg bg-white/5 p-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-green-500" />
+                  <span className="text-sm text-white/70">Mon – Fri</span>
+                </div>
+                <span className="text-sm font-medium text-white">9 AM – 5 PM</span>
+              </div>
+              <div className="mt-2 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-green-500" />
+                  <span className="text-sm text-white/70">Saturday</span>
+                </div>
+                <span className="text-sm font-medium text-white">10 AM – 4 PM</span>
+              </div>
+              <div className="mt-2 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-red-500" />
+                  <span className="text-sm text-white/70">Sunday</span>
+                </div>
+                <span className="text-sm font-medium text-white/50">Closed</span>
+              </div>
+            </div>
+          </div>
+
           {/* Location & Maps */}
-          <div className="border-t border-white/10 px-4 py-6">
-            <p className="mb-3 px-4 text-xs font-semibold uppercase tracking-wide text-white/50">Visit Us</p>
+          <div className="border-t border-white/10 px-4 py-4">
+            <p className="mb-2 px-4 text-xs font-semibold uppercase tracking-wide text-white/50">Visit Us</p>
             <div className="rounded-lg bg-white/5 p-4">
               <p className="text-sm font-medium text-white">300 Red Bank Rd</p>
               <p className="text-sm text-white/60">Goose Creek, SC 29445</p>

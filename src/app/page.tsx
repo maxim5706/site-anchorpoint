@@ -132,20 +132,20 @@ export default function Home() {
                       </div>
 
           <div className="relative mx-auto max-w-6xl px-6 pb-12 pt-10 md:pb-16 md:pt-12">
-            <div className="grid items-start gap-12 md:grid-cols-2 lg:gap-16">
-              <div>
+            <div className="grid items-center gap-12 md:grid-cols-2 lg:gap-16">
+              <div className="text-center md:text-left">
                 <h1
                   className="text-4xl font-semibold leading-[1.08] tracking-tight text-white md:text-5xl"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  Your Financial Anchor in a Sea of Uncertainty
+                  Your Financial Anchor
                 </h1>
 
-                <p className="mt-6 max-w-md text-base leading-7 text-[color:var(--ap-cream)]/75">
+                <p className="mx-auto mt-6 max-w-md text-base leading-7 text-[color:var(--ap-cream)]/75 md:mx-0">
                   Accurate bookkeeping and tax preparation, with proactive guidance you can rely on.
                 </p>
 
-                <div className="mt-10 flex flex-wrap gap-x-10 gap-y-3">
+                <div className="mt-10 flex flex-wrap justify-center gap-x-10 gap-y-3 md:justify-start">
                   <div>
                     <p className="text-sm font-semibold text-white">Quick responses</p>
                     <p className="text-xs text-[color:var(--ap-cream)]/50">Communication</p>
@@ -486,16 +486,24 @@ export default function Home() {
                     <span className="text-sm text-[color:var(--ap-navy)]/50">Closed</span>
                   </div>
                 </div>
-                <div className="mt-5 flex items-center gap-3 rounded-lg border border-[color:var(--ap-burgundy)]/20 bg-[color:var(--ap-burgundy)]/5 px-4 py-3">
+                <a
+                  href="https://maps.google.com/?q=300+Red+Bank+Rd,+Goose+Creek,+SC+29445"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-5 flex items-center gap-3 rounded-lg border border-[color:var(--ap-burgundy)]/20 bg-[color:var(--ap-burgundy)]/5 px-4 py-3 transition-colors hover:bg-[color:var(--ap-burgundy)]/10"
+                >
                   <svg className="h-5 w-5 text-[color:var(--ap-burgundy)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                   <div>
-                    <p className="text-sm font-semibold text-[color:var(--ap-navy)]">Goose Creek, SC</p>
-                    <p className="text-xs text-[color:var(--ap-navy)]/50">Serving clients nationwide</p>
+                    <p className="text-sm font-semibold text-[color:var(--ap-navy)]">300 Red Bank Rd, Goose Creek, SC</p>
+                    <p className="text-xs text-[color:var(--ap-navy)]/50">Click for directions</p>
                   </div>
-                </div>
+                  <svg className="ml-auto h-4 w-4 text-[color:var(--ap-burgundy)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
