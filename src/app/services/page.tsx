@@ -22,7 +22,7 @@ export default function ServicesPage() {
               href="https://anchorpointaccounting.taxdome.com"
               target="_blank"
               rel="noreferrer"
-              className="ml-2 inline-flex items-center justify-center rounded-full border border-white/25 px-4 py-2 text-white transition-colors hover:bg-white/10"
+              className="ml-2 inline-flex items-center justify-center rounded-full bg-[color:var(--ap-burgundy)] px-4 py-2 text-white transition-colors hover:bg-[color:var(--ap-burgundy)]/90"
             >
               Client Portal
             </a>
