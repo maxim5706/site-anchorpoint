@@ -482,9 +482,9 @@ export default function Home() {
                     </div>
                   )}
                   {!officeStatus.isOpen && (
-                    <div className="mb-3 flex items-center justify-center gap-2 rounded-lg bg-red-500/10 px-4 py-2">
-                      <div className="h-2 w-2 rounded-full bg-red-500" />
-                      <span className="text-sm font-semibold text-red-700">Currently Closed</span>
+                    <div className="mb-3 flex items-center justify-center gap-2 rounded-lg bg-[color:var(--ap-navy)]/10 px-4 py-2">
+                      <div className="h-2 w-2 rounded-full bg-[color:var(--ap-navy)]/50" />
+                      <span className="text-sm font-semibold text-[color:var(--ap-navy)]/70">Currently Closed</span>
                     </div>
                   )}
                   <div className="flex items-center justify-between rounded-lg bg-[color:var(--ap-cream)]/50 px-4 py-3">
@@ -503,7 +503,7 @@ export default function Home() {
                   </div>
                   <div className="flex items-center justify-between rounded-lg bg-[color:var(--ap-navy)]/5 px-4 py-3">
                     <div className="flex items-center gap-3">
-                      <div className="h-2 w-2 rounded-full bg-red-500" />
+                      <div className="h-2 w-2 rounded-full bg-[color:var(--ap-navy)]/30" />
                       <span className="text-sm text-[color:var(--ap-navy)]/50">Sunday</span>
                     </div>
                     <span className="text-sm text-[color:var(--ap-navy)]/50">Closed</span>

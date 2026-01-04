@@ -159,22 +159,22 @@ export default function MobileNav({ currentPage = "home" }: MobileNavProps) {
             <div className="rounded-lg bg-white/5 p-3">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <div className={`h-2 w-2 rounded-full ${officeStatus.weekdayOpen ? 'bg-green-500' : 'bg-red-500'}`} />
+                  <div className={`h-2 w-2 rounded-full ${officeStatus.weekdayOpen ? 'bg-green-500' : 'bg-white/30'}`} />
                   <span className="text-sm text-white/70">Mon – Fri</span>
                 </div>
                 <span className="text-sm font-medium text-white">9 AM – 5 PM</span>
               </div>
               <div className="mt-2 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <div className={`h-2 w-2 rounded-full ${officeStatus.saturdayOpen ? 'bg-green-500' : 'bg-red-500'}`} />
+                  <div className={`h-2 w-2 rounded-full ${officeStatus.saturdayOpen ? 'bg-green-500' : 'bg-white/30'}`} />
                   <span className="text-sm text-white/70">Saturday</span>
                 </div>
                 <span className="text-sm font-medium text-white">10 AM – 4 PM</span>
               </div>
               <div className="mt-2 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-red-500" />
-                  <span className="text-sm text-white/70">Sunday</span>
+                  <div className="h-2 w-2 rounded-full bg-white/30" />
+                  <span className="text-sm text-white/50">Sunday</span>
                 </div>
                 <span className="text-sm font-medium text-white/50">Closed</span>
               </div>
