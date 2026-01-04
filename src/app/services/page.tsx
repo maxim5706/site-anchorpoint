@@ -192,8 +192,8 @@ export default function ServicesPage() {
                       : "border-[color:var(--ap-navy)]/8"
                   }`}
                 >
-                  <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-[color:var(--ap-navy)]/10">
-                    <div className="text-[color:var(--ap-navy)]">{service.icon}</div>
+                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-[color:var(--ap-navy)]">
+                    {service.icon}
                   </div>
                   <h3 className="font-semibold text-[color:var(--ap-navy)]">{service.title}</h3>
                   <p className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-[color:var(--ap-burgundy)]">
