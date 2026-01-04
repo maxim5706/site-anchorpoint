@@ -1,6 +1,154 @@
+"use client";
+
 import Image from "next/image";
+import { useState, useEffect } from "react";
+
+const services = [
+  {
+    id: "individual",
+    title: "Individual Tax Prep",
+    shortDesc: "Expert preparation for individuals and families—accurate filings, maximum deductions.",
+    icon: (
+      <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+      </svg>
+    ),
+    fullTitle: "Individual Tax Preparation",
+    description: "Whether you're filing a simple return or have a more complex situation, we're here to help you navigate tax season with confidence. Our team takes the time to understand your unique circumstances and ensure you're taking advantage of every deduction and credit available to you.",
+    features: [
+      "Federal and state tax return preparation",
+      "W-2 and 1099 income reporting",
+      "Self-employment and freelance income",
+      "Rental property income and expenses",
+      "Investment and dividend income",
+      "Education credits and deductions",
+      "Retirement contribution optimization",
+      "Year-round tax planning guidance",
+    ],
+    process: "We start with a thorough review of your documents, then prepare your return with careful attention to detail. Before filing, we walk you through everything so you understand your return completely.",
+  },
+  {
+    id: "business",
+    title: "Business Tax & Consulting",
+    shortDesc: "Strategic tax planning and preparation for businesses of all sizes.",
+    icon: (
+      <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+      </svg>
+    ),
+    fullTitle: "Business Tax Preparation & Consulting",
+    description: "Running a business is complex enough without worrying about taxes. We provide comprehensive tax services that go beyond just filing—we help you plan strategically throughout the year to minimize your tax burden and keep more money in your business.",
+    features: [
+      "LLC, S-Corp, C-Corp, and Partnership returns",
+      "Quarterly estimated tax calculations",
+      "Business expense categorization guidance",
+      "Entity structure optimization",
+      "Sales tax compliance assistance",
+      "Year-end tax planning strategies",
+      "Multi-state filing coordination",
+      "IRS correspondence and notices",
+    ],
+    process: "We work with you year-round, not just at tax time. Regular check-ins help us identify opportunities and ensure you're never caught off guard.",
+  },
+  {
+    id: "bookkeeping",
+    title: "Bookkeeping",
+    shortDesc: "Monthly bookkeeping with clean categorization and actionable reports.",
+    icon: (
+      <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+      </svg>
+    ),
+    fullTitle: "Professional Bookkeeping Services",
+    description: "Good bookkeeping is the foundation of a healthy business. We provide reliable, consistent bookkeeping services that give you clear visibility into your finances—so you can make informed decisions and stay focused on growing your business.",
+    features: [
+      "Monthly bank and credit card reconciliation",
+      "Expense categorization and tracking",
+      "Accounts receivable management",
+      "Accounts payable oversight",
+      "Monthly financial statements",
+      "Cash flow monitoring and reporting",
+      "QuickBooks setup and training",
+      "Clean books for tax time",
+    ],
+    process: "Each month, we reconcile your accounts, categorize transactions, and deliver clear financial reports. You'll always know where your business stands.",
+  },
+  {
+    id: "payroll",
+    title: "Payroll Services",
+    shortDesc: "Accurate and timely payroll processing for your business.",
+    icon: (
+      <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+      </svg>
+    ),
+    fullTitle: "Payroll Processing Services",
+    description: "Payroll shouldn't be a headache. We handle all the details—from calculating wages and withholdings to filing payroll taxes—so your employees get paid accurately and on time, every time.",
+    features: [
+      "Weekly, bi-weekly, or monthly processing",
+      "Direct deposit setup and management",
+      "Federal and state tax withholdings",
+      "Payroll tax deposits and filings",
+      "W-2 and 1099 year-end preparation",
+      "New hire reporting and onboarding",
+      "PTO and benefits tracking",
+      "Payroll reports and summaries",
+    ],
+    process: "Simply submit your hours and we handle the rest. We process payroll on your schedule and keep you compliant with all tax requirements.",
+  },
+  {
+    id: "nonprofit",
+    title: "Non-Profit Tax Prep",
+    shortDesc: "Specialized preparation for 501(c)(3) and other non-profit organizations.",
+    icon: (
+      <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+      </svg>
+    ),
+    fullTitle: "Non-Profit Tax Preparation",
+    description: "Non-profit organizations have unique tax requirements and compliance obligations. We understand the intricacies of tax-exempt status and help you maintain good standing while focusing on your mission.",
+    features: [
+      "Form 990 and 990-EZ preparation",
+      "Tax-exempt status maintenance",
+      "State registration and renewals",
+      "Donor acknowledgment guidance",
+      "Board financial reporting",
+      "Grant compliance documentation",
+      "Unrelated business income tracking",
+      "Annual compliance calendar",
+    ],
+    process: "We stay on top of deadlines and requirements so you can focus on your mission. Our team ensures your organization remains in compliance year after year.",
+  },
+];
 
 export default function ServicesPage() {
+  const [openSection, setOpenSection] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash.replace("#", "");
+      if (hash && services.find(s => s.id === hash)) {
+        setOpenSection(hash);
+        setTimeout(() => {
+          const element = document.getElementById(`detail-${hash}`);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }, 100);
+      }
+    }
+  }, []);
+
+  const handleCardClick = (id: string) => {
+    setOpenSection(openSection === id ? null : id);
+    setTimeout(() => {
+      const element = document.getElementById(`detail-${id}`);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 100);
+  };
+
   return (
     <div className="min-h-screen" style={{ background: "var(--ap-cream)" }}>
       <header className="sticky top-0 z-40 border-b border-[color:var(--ap-navy)]/20 bg-[color:var(--ap-navy)] backdrop-blur">
@@ -31,7 +179,7 @@ export default function ServicesPage() {
       </header>
 
       <main>
-        <section className="bg-[color:var(--ap-navy)] py-16 md:py-20">
+        <section className="bg-[color:var(--ap-navy)] py-12 md:py-16">
           <div className="mx-auto max-w-6xl px-6">
             <div className="max-w-2xl">
               <p className="text-xs font-medium uppercase tracking-wide text-[color:var(--ap-burnt-orange)]">
@@ -44,170 +192,157 @@ export default function ServicesPage() {
                 Our Services
               </h1>
               <p className="mt-4 text-base leading-7 text-[color:var(--ap-cream)]/75">
-                We offer a comprehensive range of accounting and financial services tailored to meet your specific needs.
+                Comprehensive accounting services for individuals, businesses, and non-profits. Click any service to learn more.
               </p>
             </div>
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <div id="individual" className="scroll-mt-24 rounded-xl border border-[color:var(--ap-navy)]/10 bg-white p-6 shadow-sm">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[color:var(--ap-navy)]">
-                <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
-              </div>
-              <h2 className="text-lg font-semibold text-[color:var(--ap-navy)]">Individual Tax Preparation</h2>
-              <p className="mt-2 text-sm leading-relaxed text-[color:var(--ap-navy)]/70">
-                Expert tax preparation for individuals and families. We ensure accurate filings, maximize your deductions, and provide clear explanations so tax season feels manageable.
-              </p>
-              <ul className="mt-4 space-y-2 text-sm text-[color:var(--ap-navy)]/70">
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
-                  Federal and state returns
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
-                  Deduction optimization
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
-                  Tax planning strategies
-                </li>
-              </ul>
-            </div>
-
-            <div id="business" className="scroll-mt-24 rounded-xl border border-[color:var(--ap-navy)]/10 bg-white p-6 shadow-sm">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[color:var(--ap-navy)]">
-                <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
-              </div>
-              <h2 className="text-lg font-semibold text-[color:var(--ap-navy)]">Business Tax Preparation</h2>
-              <p className="mt-2 text-sm leading-relaxed text-[color:var(--ap-navy)]/70">
-                Comprehensive tax services for businesses of all sizes. We focus on strategy, compliance, and year-round readiness to help your business thrive.
-              </p>
-              <ul className="mt-4 space-y-2 text-sm text-[color:var(--ap-navy)]/70">
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
-                  All entity types (LLC, S-Corp, C-Corp)
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
-                  Quarterly estimated taxes
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
-                  Tax strategy and planning
-                </li>
-              </ul>
-            </div>
-
-            <div id="bookkeeping" className="scroll-mt-24 rounded-xl border border-[color:var(--ap-navy)]/10 bg-white p-6 shadow-sm">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[color:var(--ap-navy)]">
-                <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                </svg>
-              </div>
-              <h2 className="text-lg font-semibold text-[color:var(--ap-navy)]">Bookkeeping</h2>
-              <p className="mt-2 text-sm leading-relaxed text-[color:var(--ap-navy)]/70">
-                Professional bookkeeping to keep your finances organized. Reliable monthly bookkeeping with clean categorization and reporting you can actually use.
-              </p>
-              <ul className="mt-4 space-y-2 text-sm text-[color:var(--ap-navy)]/70">
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
-                  Monthly reconciliation
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
-                  Financial statements
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
-                  QuickBooks setup and support
-                </li>
-              </ul>
-            </div>
-
-            <div id="payroll" className="scroll-mt-24 rounded-xl border border-[color:var(--ap-navy)]/10 bg-white p-6 shadow-sm">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[color:var(--ap-navy)]">
-                <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-              <h2 className="text-lg font-semibold text-[color:var(--ap-navy)]">Payroll Services</h2>
-              <p className="mt-2 text-sm leading-relaxed text-[color:var(--ap-navy)]/70">
-                Accurate and timely payroll processing so you can focus on running your business. We handle the details so your employees are paid correctly and on time.
-              </p>
-              <ul className="mt-4 space-y-2 text-sm text-[color:var(--ap-navy)]/70">
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
-                  Payroll processing
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
-                  Payroll tax filings
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
-                  W-2 and 1099 preparation
-                </li>
-              </ul>
-            </div>
-
-            <div id="nonprofit" className="scroll-mt-24 rounded-xl border border-[color:var(--ap-navy)]/10 bg-white p-6 shadow-sm">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[color:var(--ap-navy)]">
-                <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-              <h2 className="text-lg font-semibold text-[color:var(--ap-navy)]">Non-Profit Tax Preparation</h2>
-              <p className="mt-2 text-sm leading-relaxed text-[color:var(--ap-navy)]/70">
-                Specialized tax preparation for 501(c)(3) organizations and other non-profits. We understand the unique requirements and help you maintain compliance.
-              </p>
-              <ul className="mt-4 space-y-2 text-sm text-[color:var(--ap-navy)]/70">
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
-                  Form 990 preparation
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
-                  Compliance guidance
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
-                  Tax-exempt status support
-                </li>
-              </ul>
+        {/* Quick Cards */}
+        <section className="py-14 md:py-16">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-5">
+              {services.map((service) => (
+                <button
+                  key={service.id}
+                  onClick={() => handleCardClick(service.id)}
+                  className={`group flex flex-col rounded-xl border bg-white p-5 text-left shadow-sm transition-all hover:shadow-lg hover:-translate-y-0.5 ${
+                    openSection === service.id 
+                      ? "border-[color:var(--ap-burgundy)]/30 ring-2 ring-[color:var(--ap-burgundy)]/20" 
+                      : "border-[color:var(--ap-navy)]/8"
+                  }`}
+                >
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[color:var(--ap-navy)]">
+                    {service.icon}
+                  </div>
+                  <h3 className="font-semibold text-[color:var(--ap-navy)]">{service.title}</h3>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-[color:var(--ap-navy)]/60">
+                    {service.shortDesc}
+                  </p>
+                  <p className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[color:var(--ap-burgundy)] group-hover:underline">
+                    {openSection === service.id ? "View details" : "Learn more"}{" "}
+                    <span aria-hidden className="transition-transform group-hover:translate-x-0.5">↓</span>
+                  </p>
+                </button>
+              ))}
             </div>
           </div>
         </section>
 
-        <section className="bg-[color:var(--ap-burgundy)] py-16 md:py-20">
-          <div className="mx-auto max-w-6xl px-6 text-center">
+        {/* Detail Sections */}
+        <section className="border-t border-[color:var(--ap-navy)]/8 bg-white py-16 md:py-20">
+          <div className="mx-auto max-w-4xl px-6">
+            <div className="mb-10 text-center">
+              <h2
+                className="text-2xl font-semibold text-[color:var(--ap-navy)] md:text-3xl"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Service Details
+              </h2>
+              <p className="mx-auto mt-2 max-w-lg text-sm text-[color:var(--ap-navy)]/50">
+                Click a service above or expand below to learn more.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {services.map((service) => (
+                <div
+                  key={service.id}
+                  id={`detail-${service.id}`}
+                  className="scroll-mt-24 rounded-xl border border-[color:var(--ap-navy)]/10 bg-[color:var(--ap-cream)]/30 overflow-hidden"
+                >
+                  <button
+                    onClick={() => setOpenSection(openSection === service.id ? null : service.id)}
+                    className="flex w-full items-center gap-4 p-5 text-left transition-colors hover:bg-[color:var(--ap-cream)]/50"
+                  >
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[color:var(--ap-navy)]">
+                      {service.icon}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-semibold text-[color:var(--ap-navy)]">{service.fullTitle}</h3>
+                      <p className="mt-0.5 text-sm text-[color:var(--ap-navy)]/60">{service.shortDesc}</p>
+                    </div>
+                    <div className={`shrink-0 transition-transform duration-200 ${openSection === service.id ? "rotate-180" : ""}`}>
+                      <svg className="h-5 w-5 text-[color:var(--ap-navy)]/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                  </button>
+
+                  <div className={`grid transition-all duration-300 ease-in-out ${
+                    openSection === service.id ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                  }`}>
+                    <div className="overflow-hidden">
+                      <div className="border-t border-[color:var(--ap-navy)]/10 bg-white p-6">
+                        <p className="text-sm leading-relaxed text-[color:var(--ap-navy)]/70">
+                          {service.description}
+                        </p>
+
+                        <div className="mt-6">
+                          <h4 className="text-sm font-semibold uppercase tracking-wide text-[color:var(--ap-navy)]/70">
+                            What's Included
+                          </h4>
+                          <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+                            {service.features.map((feature, idx) => (
+                              <li key={idx} className="flex items-start gap-2">
+                                <svg className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--ap-burgundy)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span className="text-sm text-[color:var(--ap-navy)]/70">{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <div className="mt-6 rounded-lg bg-[color:var(--ap-cream)]/50 p-4">
+                          <h4 className="text-sm font-semibold text-[color:var(--ap-navy)]">Our Process</h4>
+                          <p className="mt-2 text-sm leading-relaxed text-[color:var(--ap-navy)]/70">
+                            {service.process}
+                          </p>
+                        </div>
+
+                        <div className="mt-6">
+                          <a
+                            href="/contact"
+                            className="inline-flex items-center gap-2 rounded-full bg-[color:var(--ap-burgundy)] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[color:var(--ap-burgundy)]/90"
+                          >
+                            Get Started
+                            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[color:var(--ap-burgundy)] py-24 md:py-28">
+          <div className="mx-auto max-w-2xl px-6 text-center">
             <h2
-              className="text-3xl font-semibold text-white md:text-4xl"
+              className="text-2xl font-semibold text-white md:text-3xl"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Ready to Get Started?
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-white/80">
-              Schedule a consultation to discuss your needs and learn how we can help you achieve your financial goals.
+            <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-white/80">
+              Schedule a consultation and let us help you achieve your financial goals.
             </p>
-            <div className="mt-8">
-              <a
-                href="/contact"
-                className="inline-flex h-12 items-center justify-center rounded-full bg-white px-8 text-sm font-semibold text-[color:var(--ap-burgundy)] transition-colors hover:bg-white/90"
-              >
-                Schedule Consultation
-              </a>
-            </div>
+            <a
+              href="/contact"
+              className="mt-6 inline-flex h-11 items-center justify-center rounded bg-white px-6 text-sm font-semibold text-[color:var(--ap-burgundy)] transition-colors hover:bg-white/90"
+            >
+              Schedule Consultation
+            </a>
           </div>
         </section>
       </main>
 
-      <footer className="bg-[color:var(--ap-navy)]">
+      <footer className="border-t border-white/5 bg-[color:var(--ap-navy)]">
         <div className="mx-auto max-w-6xl px-6 py-12">
           <div className="flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 md:flex-row">
             <p className="text-xs text-[color:var(--ap-cream)]/50">
