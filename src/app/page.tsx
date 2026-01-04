@@ -48,26 +48,24 @@ export default function Home() {
             </a>
           </nav>
         </div>
-        <div className="h-[2px] bg-gradient-to-r from-transparent via-[color:var(--ap-burnt-orange)] to-transparent opacity-70" />
+        <div className="h-1 bg-gradient-to-r from-transparent via-[color:var(--ap-burnt-orange)] to-transparent" />
       </header>
 
       <main>
         <section className="relative bg-[color:var(--ap-navy)]">
+          {/* Large anchor watermark */}
           <div className="pointer-events-none absolute inset-0 overflow-hidden">
             <svg
-              className="absolute -bottom-1 left-0 w-full"
-              viewBox="0 0 1440 120"
-              fill="none"
+              className="absolute -right-20 top-1/2 h-[500px] w-[500px] -translate-y-1/2 opacity-[0.04] md:h-[600px] md:w-[600px]"
+              viewBox="0 0 24 24"
+              fill="var(--ap-cream)"
               xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="none"
               aria-hidden
             >
-              <path
-                d="M0 40C240 10 480 0 720 20C960 40 1200 80 1440 60V120H0V40Z"
-                fill="var(--ap-cream)"
-                opacity="0.035"
-              />
+              <path d="M12 2C10.9 2 10 2.9 10 4C10 4.74 10.4 5.39 11 5.73V7H13V5.73C13.6 5.39 14 4.74 14 4C14 2.9 13.1 2 12 2ZM12 3C12.55 3 13 3.45 13 4C13 4.55 12.55 5 12 5C11.45 5 11 4.55 11 4C11 3.45 11.45 3 12 3ZM5 9C5 9 5 15.57 5 16C5 19.31 8.13 22 12 22C15.87 22 19 19.31 19 16V9H17V16C17 18.21 14.76 20 12 20C9.24 20 7 18.21 7 16V9H5ZM11 9V13.17L9.41 11.59L8 13L12 17L16 13L14.59 11.59L13 13.17V9H11Z"/>
             </svg>
+            {/* Burnt orange accent glow */}
+            <div className="absolute -left-32 top-0 h-64 w-64 rounded-full bg-[color:var(--ap-burnt-orange)] opacity-[0.08] blur-3xl" />
           </div>
 
           <div className="relative mx-auto max-w-6xl px-6 pb-10 pt-8 md:pb-14 md:pt-10">
