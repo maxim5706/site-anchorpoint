@@ -48,7 +48,7 @@ export default function Home() {
             </a>
           </nav>
         </div>
-        <div className="h-1 bg-gradient-to-r from-transparent via-[color:var(--ap-burnt-orange)] to-transparent" />
+        <div className="h-0.5 bg-gradient-to-r from-transparent via-[color:var(--ap-burnt-orange)]/80 to-transparent" />
       </header>
 
       <main>
@@ -79,7 +79,7 @@ export default function Home() {
                   Accurate bookkeeping and tax preparation, with proactive guidance you can rely on.
                 </p>
 
-                <div className="mt-10 flex flex-wrap gap-x-10 gap-y-3">
+                <div className="mt-8 flex flex-wrap gap-x-10 gap-y-3">
                   <div>
                     <p className="text-sm font-semibold text-white">Quick responses</p>
                     <p className="text-xs text-[color:var(--ap-cream)]/50">Communication</p>
