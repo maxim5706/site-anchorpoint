@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import MobileNav from "@/components/MobileNav";
+import Footer from "@/components/Footer";
 
 export default function ContactPage() {
   const [quickLinksOpen, setQuickLinksOpen] = useState(false);
@@ -282,19 +283,7 @@ export default function ContactPage() {
         </section>
       </main>
 
-      <footer className="bg-[color:var(--ap-navy)]">
-        <div className="mx-auto max-w-6xl px-6 py-12">
-          <div className="flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 md:flex-row">
-            <p className="text-xs text-[color:var(--ap-cream)]/50">
-              © {new Date().getFullYear()} Anchor Point Accounting. All rights reserved.
-            </p>
-            <div className="flex items-center gap-6 text-xs text-[color:var(--ap-cream)]/50">
-              <a className="hover:text-white" href="/privacy">Privacy Policy</a>
-              <a className="hover:text-white" href="/terms">Terms of Service</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
