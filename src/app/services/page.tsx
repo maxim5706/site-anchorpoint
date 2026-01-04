@@ -192,12 +192,15 @@ export default function ServicesPage() {
                       : "border-[color:var(--ap-navy)]/8"
                   }`}
                 >
-                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-[color:var(--ap-navy)]">
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-[color:var(--ap-navy)]">
                     {service.icon}
                   </div>
                   <h3 className="font-semibold text-[color:var(--ap-navy)]">{service.title}</h3>
-                  <p className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-[color:var(--ap-burgundy)]">
-                    View details <span aria-hidden className="transition-transform group-hover:translate-y-0.5">↓</span>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-[color:var(--ap-navy)]/60">
+                    {service.shortDesc}
+                  </p>
+                  <p className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[color:var(--ap-burgundy)] group-hover:underline">
+                    Learn more <span aria-hidden className="transition-transform group-hover:translate-y-0.5">↓</span>
                   </p>
                 </button>
               ))}
