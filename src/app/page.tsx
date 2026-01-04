@@ -150,12 +150,12 @@ export default function Home() {
               alt=""
               width={600}
               height={600}
-              className="absolute right-0 bottom-0 h-[550px] w-[550px] translate-x-[20%] translate-y-[15%] object-contain opacity-[0.22] md:h-[700px] md:w-[700px]"
+              className="absolute right-0 bottom-0 hidden h-[550px] w-[550px] translate-x-[20%] translate-y-[15%] object-contain opacity-[0.22] sm:block md:h-[700px] md:w-[700px]"
               aria-hidden="true"
             />
                       </div>
 
-          <div className="relative mx-auto max-w-6xl px-6 pb-12 pt-10 md:pb-16 md:pt-12">
+          <div className="relative mx-auto max-w-6xl px-6 pb-10 pt-8 md:pb-16 md:pt-12">
             <div className="grid items-center gap-12 md:grid-cols-2 lg:gap-16">
               <div className="text-center md:text-left">
                 <h1
@@ -169,9 +169,11 @@ export default function Home() {
                   Accurate bookkeeping and tax preparation, with proactive guidance you can rely on.
                 </p>
 
-                <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-3 md:justify-start">
+                <div className="mt-8 flex flex-wrap items-center justify-center gap-x-2 gap-y-2 md:mt-10 md:justify-start md:gap-x-6">
                   <p className="text-sm font-medium text-white">Issues caught early</p>
+                  <span className="hidden text-white/30 md:inline">•</span>
                   <p className="text-sm font-medium text-white">Real support</p>
+                  <span className="hidden text-white/30 md:inline">•</span>
                   <p className="text-sm font-medium text-white">Two decades experience</p>
                 </div>
               </div>
@@ -209,7 +211,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-8 flex flex-col gap-3 md:hidden">
+            <div className="mt-6 flex flex-col gap-3 md:hidden">
               <a
                 href="/contact"
                 className="flex h-11 items-center justify-center rounded-full bg-[color:var(--ap-burgundy)] text-sm font-semibold text-white"
@@ -226,7 +228,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-14 md:py-18">
+        <section className="py-10 md:py-14">
           <div className="mx-auto max-w-6xl px-6">
             <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
               <div>
@@ -384,7 +386,7 @@ export default function Home() {
         </section>
         */}
 
-        <section className="mt-4 border-t border-[color:var(--ap-navy)]/6 bg-white py-16 md:py-20">
+        <section className="mt-4 hidden border-t border-[color:var(--ap-navy)]/6 bg-white py-12 md:block md:py-20">
           <div className="mx-auto max-w-6xl px-6">
             <div className="mb-10 text-center">
               <h2
