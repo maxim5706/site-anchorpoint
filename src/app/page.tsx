@@ -53,17 +53,16 @@ export default function Home() {
 
       <main>
         <section className="relative bg-[color:var(--ap-navy)]">
-          {/* Large anchor watermark */}
+          {/* Large anchor watermark - using the circle logo (just anchor) */}
           <div className="pointer-events-none absolute inset-0 overflow-hidden">
-            <svg
-              className="absolute -right-20 top-1/2 h-[500px] w-[500px] -translate-y-1/2 opacity-[0.04] md:h-[600px] md:w-[600px]"
-              viewBox="0 0 24 24"
-              fill="var(--ap-cream)"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden
-            >
-              <path d="M12 2C10.9 2 10 2.9 10 4C10 4.74 10.4 5.39 11 5.73V7H13V5.73C13.6 5.39 14 4.74 14 4C14 2.9 13.1 2 12 2ZM12 3C12.55 3 13 3.45 13 4C13 4.55 12.55 5 12 5C11.45 5 11 4.55 11 4C11 3.45 11.45 3 12 3ZM5 9C5 9 5 15.57 5 16C5 19.31 8.13 22 12 22C15.87 22 19 19.31 19 16V9H17V16C17 18.21 14.76 20 12 20C9.24 20 7 18.21 7 16V9H5ZM11 9V13.17L9.41 11.59L8 13L12 17L16 13L14.59 11.59L13 13.17V9H11Z"/>
-            </svg>
+            <Image
+              src="/brand/logo-circle-orange.png"
+              alt=""
+              width={600}
+              height={600}
+              className="absolute -right-16 top-1/2 h-[400px] w-[400px] -translate-y-1/2 object-contain opacity-[0.08] md:h-[550px] md:w-[550px]"
+              aria-hidden="true"
+            />
             {/* Burnt orange accent glow */}
             <div className="absolute -left-32 top-0 h-64 w-64 rounded-full bg-[color:var(--ap-burnt-orange)] opacity-[0.08] blur-3xl" />
           </div>
