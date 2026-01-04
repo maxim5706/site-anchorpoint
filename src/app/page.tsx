@@ -65,8 +65,8 @@ export default function Home() {
             />
                       </div>
 
-          <div className="relative mx-auto max-w-6xl px-6 pb-10 pt-8 md:pb-14 md:pt-10">
-            <div className="grid items-start gap-10 md:grid-cols-2">
+          <div className="relative mx-auto max-w-6xl px-6 pb-12 pt-10 md:pb-16 md:pt-12">
+            <div className="grid items-start gap-12 md:grid-cols-2 lg:gap-16">
               <div>
                 <h1
                   className="text-4xl font-semibold leading-[1.08] tracking-tight text-white md:text-5xl"
@@ -75,11 +75,11 @@ export default function Home() {
                   Your Financial Anchor in a Sea of Uncertainty
                 </h1>
 
-                <p className="mt-5 max-w-md text-base leading-7 text-[color:var(--ap-cream)]/75">
+                <p className="mt-6 max-w-md text-base leading-7 text-[color:var(--ap-cream)]/75">
                   Accurate bookkeeping and tax preparation, with proactive guidance you can rely on.
                 </p>
 
-                <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-4">
+                <div className="mt-12 grid grid-cols-2 gap-x-8 gap-y-4 sm:grid-cols-4">
                   <div>
                     <p className="text-sm font-semibold text-white">Quick responses</p>
                     <p className="text-xs text-[color:var(--ap-cream)]/50">Communication</p>
@@ -100,7 +100,7 @@ export default function Home() {
               </div>
 
               <div className="relative hidden md:block md:justify-self-end">
-                <div className="relative rounded-xl border border-white/10 bg-white/[0.02] p-6">
+                <div className="relative rounded-xl border border-white/10 bg-white/[0.02] p-7">
                   <div className="flex items-center justify-center">
                     <Image
                       src="/brand/logo-circle-cream.png"
@@ -114,7 +114,7 @@ export default function Home() {
                       Serving Goose Creek, SC & clients nationwide
                     </p>
                   </div>
-                  <div className="mt-5 space-y-2">
+                  <div className="mt-6 space-y-2.5">
                     <a
                       href="/contact"
                       className="flex h-11 w-full items-center justify-center rounded-full bg-[color:var(--ap-burgundy)] text-sm font-semibold text-white transition-colors hover:brightness-110"
