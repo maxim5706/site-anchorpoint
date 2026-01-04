@@ -56,7 +56,7 @@ export default function Home() {
           {/* Large anchor watermark - using the circle logo (just anchor) */}
           <div className="pointer-events-none absolute inset-0 overflow-hidden">
             <Image
-              src="/brand/logo-circle-orange.png"
+              src="/Image.png"
               alt=""
               width={600}
               height={600}
