@@ -60,7 +60,7 @@ export default function Home() {
               alt=""
               width={600}
               height={600}
-              className="absolute right-0 bottom-0 h-[550px] w-[550px] translate-x-[20%] translate-y-[15%] object-contain opacity-[0.06] md:h-[700px] md:w-[700px]"
+              className="absolute right-0 bottom-0 h-[550px] w-[550px] translate-x-[20%] translate-y-[15%] object-contain opacity-[0.12] md:h-[700px] md:w-[700px]"
               aria-hidden="true"
             />
                       </div>
@@ -109,12 +109,7 @@ export default function Home() {
                       height={110}
                     />
                   </div>
-                  <div className="mt-4 text-center">
-                    <p className="text-xs font-medium uppercase tracking-wide text-[color:var(--ap-cream)]/60">
-                      Serving Goose Creek, SC & clients nationwide
-                    </p>
-                  </div>
-                  <div className="mt-6 space-y-2.5">
+                  <div className="mt-5 space-y-2.5">
                     <a
                       href="/contact"
                       className="flex h-11 w-full items-center justify-center rounded-full bg-[color:var(--ap-burgundy)] text-sm font-semibold text-white transition-colors hover:brightness-110"
