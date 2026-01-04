@@ -168,7 +168,7 @@ export default function Home() {
                 <div className="relative rounded-xl border border-white/10 bg-white/[0.02] p-6">
                   <div className="flex items-center justify-center">
                     <Image
-                      src="/Untitled design.png"
+                      src="/brand/anchor-gold.png"
                       alt="Anchor Point Accounting"
                       width={100}
                       height={100}
