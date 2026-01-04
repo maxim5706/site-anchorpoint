@@ -159,108 +159,99 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border-t border-[color:var(--ap-navy)]/8 bg-white py-16 md:py-20">
+        <section className="py-16 md:py-20">
           <div className="mx-auto max-w-6xl px-6">
-            <div className="mb-10 text-center">
-              <h2
-                className="text-2xl font-semibold text-[color:var(--ap-navy)] md:text-3xl"
-                style={{ fontFamily: "var(--font-display)" }}
+            <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+              <div>
+                <h2
+                  className="text-2xl font-semibold text-[color:var(--ap-navy)] md:text-3xl"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  Our Services
+                </h2>
+                <p className="mt-2 max-w-xl text-sm leading-relaxed text-[color:var(--ap-navy)]/60">
+                  Comprehensive accounting services for individuals, businesses, and non-profits.
+                </p>
+              </div>
+              <a
+                href="/services"
+                className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[color:var(--ap-burgundy)] hover:underline md:mt-0"
               >
-                Our Services
-              </h2>
-              <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-[color:var(--ap-navy)]/60">
-                Comprehensive accounting services for individuals, businesses, and non-profits.
-              </p>
+                View all services <span aria-hidden>→</span>
+              </a>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
               <a
                 href="/services#individual"
-                className="group flex items-start gap-5 rounded-xl border border-[color:var(--ap-navy)]/10 bg-[color:var(--ap-cream)] p-6 transition-all hover:border-[color:var(--ap-burgundy)]/30 hover:shadow-md"
+                className="group flex flex-col rounded-xl border border-[color:var(--ap-navy)]/10 bg-white p-5 shadow-sm transition-all hover:border-[color:var(--ap-burgundy)]/20 hover:shadow-md"
               >
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[color:var(--ap-navy)]">
-                  <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[color:var(--ap-navy)]">
+                  <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-[color:var(--ap-navy)]">Individual Tax Prep</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[color:var(--ap-navy)]/60">
-                    Expert preparation for individuals and families—accurate filings, maximum deductions.
-                  </p>
-                  <p className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-[color:var(--ap-burgundy)] group-hover:gap-2 transition-all">
-                    Learn more <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
-                  </p>
-                </div>
+                <h3 className="font-semibold text-[color:var(--ap-navy)]">Individual Tax Prep</h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-[color:var(--ap-navy)]/60">
+                  Expert preparation for individuals and families—accurate filings, maximum deductions.
+                </p>
+                <p className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[color:var(--ap-burgundy)] group-hover:underline">
+                  Learn more <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
+                </p>
               </a>
 
               <a
                 href="/services#business"
-                className="group flex items-start gap-5 rounded-xl border border-[color:var(--ap-navy)]/10 bg-[color:var(--ap-cream)] p-6 transition-all hover:border-[color:var(--ap-burgundy)]/30 hover:shadow-md"
+                className="group flex flex-col rounded-xl border border-[color:var(--ap-navy)]/10 bg-white p-5 shadow-sm transition-all hover:border-[color:var(--ap-burgundy)]/20 hover:shadow-md"
               >
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[color:var(--ap-navy)]">
-                  <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[color:var(--ap-navy)]">
+                  <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-[color:var(--ap-navy)]">Business Tax & Consulting</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[color:var(--ap-navy)]/60">
-                    Strategic tax planning and preparation for businesses of all sizes.
-                  </p>
-                  <p className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-[color:var(--ap-burgundy)] group-hover:gap-2 transition-all">
-                    Learn more <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
-                  </p>
-                </div>
+                <h3 className="font-semibold text-[color:var(--ap-navy)]">Business Tax & Consulting</h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-[color:var(--ap-navy)]/60">
+                  Strategic tax planning and preparation for businesses of all sizes.
+                </p>
+                <p className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[color:var(--ap-burgundy)] group-hover:underline">
+                  Learn more <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
+                </p>
               </a>
 
               <a
                 href="/services#bookkeeping"
-                className="group flex items-start gap-5 rounded-xl border border-[color:var(--ap-navy)]/10 bg-[color:var(--ap-cream)] p-6 transition-all hover:border-[color:var(--ap-burgundy)]/30 hover:shadow-md"
+                className="group flex flex-col rounded-xl border border-[color:var(--ap-navy)]/10 bg-white p-5 shadow-sm transition-all hover:border-[color:var(--ap-burgundy)]/20 hover:shadow-md"
               >
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[color:var(--ap-navy)]">
-                  <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[color:var(--ap-navy)]">
+                  <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                   </svg>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-[color:var(--ap-navy)]">Bookkeeping</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[color:var(--ap-navy)]/60">
-                    Monthly bookkeeping with clean categorization and actionable reports.
-                  </p>
-                  <p className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-[color:var(--ap-burgundy)] group-hover:gap-2 transition-all">
-                    Learn more <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
-                  </p>
-                </div>
+                <h3 className="font-semibold text-[color:var(--ap-navy)]">Bookkeeping</h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-[color:var(--ap-navy)]/60">
+                  Monthly bookkeeping with clean categorization and actionable reports.
+                </p>
+                <p className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[color:var(--ap-burgundy)] group-hover:underline">
+                  Learn more <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
+                </p>
               </a>
 
               <a
                 href="/services#nonprofit"
-                className="group flex items-start gap-5 rounded-xl border border-[color:var(--ap-navy)]/10 bg-[color:var(--ap-cream)] p-6 transition-all hover:border-[color:var(--ap-burgundy)]/30 hover:shadow-md"
+                className="group flex flex-col rounded-xl border border-[color:var(--ap-navy)]/10 bg-white p-5 shadow-sm transition-all hover:border-[color:var(--ap-burgundy)]/20 hover:shadow-md"
               >
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[color:var(--ap-navy)]">
-                  <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[color:var(--ap-navy)]">
+                  <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-[color:var(--ap-navy)]">Non-Profit Tax Prep</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[color:var(--ap-navy)]/60">
-                    Specialized preparation for 501(c)(3) and other non-profit organizations.
-                  </p>
-                  <p className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-[color:var(--ap-burgundy)] group-hover:gap-2 transition-all">
-                    Learn more <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
-                  </p>
-                </div>
-              </a>
-            </div>
-
-            <div className="mt-8 text-center">
-              <a
-                href="/services"
-                className="inline-flex items-center gap-2 rounded-full bg-[color:var(--ap-burgundy)] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[color:var(--ap-burgundy)]/90"
-              >
-                View All Services
+                <h3 className="font-semibold text-[color:var(--ap-navy)]">Non-Profit Tax Prep</h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-[color:var(--ap-navy)]/60">
+                  Specialized preparation for 501(c)(3) and other non-profit organizations.
+                </p>
+                <p className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[color:var(--ap-burgundy)] group-hover:underline">
+                  Learn more <span aria-hidden className="transition-transform group-hover:translate-x-0.5">→</span>
+                </p>
               </a>
             </div>
           </div>

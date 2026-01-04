@@ -1,5 +1,4 @@
 import Image from "next/image";
-import ServiceAccordion from "@/components/ServiceAccordion";
 
 export default function ServicesPage() {
   return (
@@ -45,108 +44,143 @@ export default function ServicesPage() {
                 Our Services
               </h1>
               <p className="mt-4 text-base leading-7 text-[color:var(--ap-cream)]/75">
-                We offer a comprehensive range of accounting and financial services tailored to meet your specific needs. Click any service below to learn more.
+                We offer a comprehensive range of accounting and financial services tailored to meet your specific needs.
               </p>
             </div>
           </div>
         </section>
 
-        <section className="mx-auto max-w-4xl px-6 py-16 md:py-20">
-          <div className="space-y-4">
-            <ServiceAccordion
-              id="individual"
-              title="Individual Tax Preparation"
-              description="Expert tax preparation for individuals and families"
-              icon={
+        <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div id="individual" className="scroll-mt-24 rounded-xl border border-[color:var(--ap-navy)]/10 bg-white p-6 shadow-sm">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[color:var(--ap-navy)]">
                 <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
-              }
-              features={[
-                "Federal and state tax returns",
-                "Deduction optimization",
-                "Tax planning strategies",
-                "Self-employment taxes",
-                "Investment income reporting",
-                "IRS correspondence support",
-              ]}
-            />
+              </div>
+              <h2 className="text-lg font-semibold text-[color:var(--ap-navy)]">Individual Tax Preparation</h2>
+              <p className="mt-2 text-sm leading-relaxed text-[color:var(--ap-navy)]/70">
+                Expert tax preparation for individuals and families. We ensure accurate filings, maximize your deductions, and provide clear explanations so tax season feels manageable.
+              </p>
+              <ul className="mt-4 space-y-2 text-sm text-[color:var(--ap-navy)]/70">
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
+                  Federal and state returns
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
+                  Deduction optimization
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
+                  Tax planning strategies
+                </li>
+              </ul>
+            </div>
 
-            <ServiceAccordion
-              id="business"
-              title="Business Tax & Consulting"
-              description="Strategic tax planning and preparation for businesses of all sizes"
-              icon={
+            <div id="business" className="scroll-mt-24 rounded-xl border border-[color:var(--ap-navy)]/10 bg-white p-6 shadow-sm">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[color:var(--ap-navy)]">
                 <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
-              }
-              features={[
-                "All entity types (LLC, S-Corp, C-Corp, Partnership)",
-                "Quarterly estimated tax payments",
-                "Tax strategy and planning",
-                "Entity structure optimization",
-                "Business expense deductions",
-                "Year-round tax advisory",
-              ]}
-            />
+              </div>
+              <h2 className="text-lg font-semibold text-[color:var(--ap-navy)]">Business Tax Preparation</h2>
+              <p className="mt-2 text-sm leading-relaxed text-[color:var(--ap-navy)]/70">
+                Comprehensive tax services for businesses of all sizes. We focus on strategy, compliance, and year-round readiness to help your business thrive.
+              </p>
+              <ul className="mt-4 space-y-2 text-sm text-[color:var(--ap-navy)]/70">
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
+                  All entity types (LLC, S-Corp, C-Corp)
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
+                  Quarterly estimated taxes
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
+                  Tax strategy and planning
+                </li>
+              </ul>
+            </div>
 
-            <ServiceAccordion
-              id="bookkeeping"
-              title="Bookkeeping"
-              description="Monthly bookkeeping with clean categorization and actionable reports"
-              icon={
+            <div id="bookkeeping" className="scroll-mt-24 rounded-xl border border-[color:var(--ap-navy)]/10 bg-white p-6 shadow-sm">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[color:var(--ap-navy)]">
                 <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
-              }
-              features={[
-                "Monthly bank reconciliation",
-                "Financial statement preparation",
-                "QuickBooks setup and support",
-                "Accounts payable/receivable",
-                "Expense categorization",
-                "Cash flow reporting",
-              ]}
-            />
+              </div>
+              <h2 className="text-lg font-semibold text-[color:var(--ap-navy)]">Bookkeeping</h2>
+              <p className="mt-2 text-sm leading-relaxed text-[color:var(--ap-navy)]/70">
+                Professional bookkeeping to keep your finances organized. Reliable monthly bookkeeping with clean categorization and reporting you can actually use.
+              </p>
+              <ul className="mt-4 space-y-2 text-sm text-[color:var(--ap-navy)]/70">
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
+                  Monthly reconciliation
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
+                  Financial statements
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
+                  QuickBooks setup and support
+                </li>
+              </ul>
+            </div>
 
-            <ServiceAccordion
-              id="nonprofit"
-              title="Non-Profit Tax Preparation"
-              description="Specialized preparation for 501(c)(3) and other non-profit organizations"
-              icon={
-                <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              }
-              features={[
-                "Form 990 preparation",
-                "Tax-exempt status compliance",
-                "Board reporting support",
-                "Grant financial reporting",
-                "Donor acknowledgment records",
-                "State registration filings",
-              ]}
-            />
-
-            <ServiceAccordion
-              id="payroll"
-              title="Payroll Services"
-              description="Accurate and timely payroll processing for your business"
-              icon={
+            <div id="payroll" className="scroll-mt-24 rounded-xl border border-[color:var(--ap-navy)]/10 bg-white p-6 shadow-sm">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[color:var(--ap-navy)]">
                 <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
-              }
-              features={[
-                "Weekly/bi-weekly/monthly payroll processing",
-                "Payroll tax filings (federal, state, local)",
-                "W-2 and 1099 preparation",
-                "Direct deposit setup",
-                "New hire reporting",
-                "Payroll compliance support",
-              ]}
-            />
+              </div>
+              <h2 className="text-lg font-semibold text-[color:var(--ap-navy)]">Payroll Services</h2>
+              <p className="mt-2 text-sm leading-relaxed text-[color:var(--ap-navy)]/70">
+                Accurate and timely payroll processing so you can focus on running your business. We handle the details so your employees are paid correctly and on time.
+              </p>
+              <ul className="mt-4 space-y-2 text-sm text-[color:var(--ap-navy)]/70">
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
+                  Payroll processing
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
+                  Payroll tax filings
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
+                  W-2 and 1099 preparation
+                </li>
+              </ul>
+            </div>
+
+            <div id="nonprofit" className="scroll-mt-24 rounded-xl border border-[color:var(--ap-navy)]/10 bg-white p-6 shadow-sm">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[color:var(--ap-navy)]">
+                <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <h2 className="text-lg font-semibold text-[color:var(--ap-navy)]">Non-Profit Tax Preparation</h2>
+              <p className="mt-2 text-sm leading-relaxed text-[color:var(--ap-navy)]/70">
+                Specialized tax preparation for 501(c)(3) organizations and other non-profits. We understand the unique requirements and help you maintain compliance.
+              </p>
+              <ul className="mt-4 space-y-2 text-sm text-[color:var(--ap-navy)]/70">
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
+                  Form 990 preparation
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
+                  Compliance guidance
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[color:var(--ap-burgundy)]" />
+                  Tax-exempt status support
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
 
