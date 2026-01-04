@@ -79,14 +79,14 @@ export default function Home() {
                   Accurate bookkeeping and tax preparation, with proactive guidance you can rely on.
                 </p>
 
-                <div className="mt-12 grid grid-cols-2 gap-x-8 gap-y-4 sm:grid-cols-4">
+                <div className="mt-10 flex flex-wrap gap-x-10 gap-y-3">
                   <div>
                     <p className="text-sm font-semibold text-white">Quick responses</p>
                     <p className="text-xs text-[color:var(--ap-cream)]/50">Communication</p>
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-white">Issues flagged early</p>
-                    <p className="text-xs text-[color:var(--ap-cream)]/50">Proactive</p>
+                    <p className="text-sm font-semibold text-white">Proactive flagging</p>
+                    <p className="text-xs text-[color:var(--ap-cream)]/50">Issues caught early</p>
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-white">Audit-ready</p>
@@ -99,14 +99,14 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="relative hidden md:block md:w-[360px]">
-                <div className="relative rounded-xl border border-white/10 bg-white/[0.02] p-8">
+              <div className="relative hidden md:block md:justify-self-end">
+                <div className="relative rounded-xl border border-white/10 bg-white/[0.02] p-6">
                   <div className="flex items-center justify-center">
                     <Image
                       src="/brand/logo-circle-cream.png"
                       alt="Anchor Point Accounting"
-                      width={150}
-                      height={150}
+                      width={140}
+                      height={140}
                     />
                   </div>
                   <div className="mt-4 text-center">
