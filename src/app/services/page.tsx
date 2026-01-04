@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import MobileNav from "@/components/MobileNav";
 
 const services = [
@@ -101,6 +101,18 @@ const services = [
 
 export default function ServicesPage() {
   const [openSection, setOpenSection] = useState<string | null>(null);
+  const [quickLinksOpen, setQuickLinksOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setQuickLinksOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -145,6 +157,34 @@ export default function ServicesPage() {
             <a href="/" className="border-b-2 border-transparent pb-0.5 text-white/70 transition-colors hover:text-white">Home</a>
             <a href="/services" className="border-b-2 border-white pb-0.5 text-white">Services</a>
             <a href="/contact" className="border-b-2 border-transparent pb-0.5 text-white/70 transition-colors hover:text-white">Contact</a>
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => setQuickLinksOpen(!quickLinksOpen)}
+                className="flex items-center gap-1 border-b-2 border-transparent pb-0.5 text-white/70 transition-colors hover:text-white"
+              >
+                QUICK LINKS
+                <svg className={`h-3 w-3 transition-transform ${quickLinksOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {quickLinksOpen && (
+                <div className="absolute right-0 top-full mt-2 w-56 rounded-lg border border-white/10 bg-[color:var(--ap-navy)] p-2 shadow-xl">
+                  <a href="https://sa.www4.irs.gov/wmr/" target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-md px-3 py-2 text-sm normal-case tracking-normal text-white/80 transition-colors hover:bg-white/10 hover:text-white">
+                    <svg className="h-4 w-4 text-[color:var(--ap-burnt-orange)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                    Where's My Refund?
+                  </a>
+                  <a href="https://sa.www4.irs.gov/bola/" target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-md px-3 py-2 text-sm normal-case tracking-normal text-white/80 transition-colors hover:bg-white/10 hover:text-white">
+                    <svg className="h-4 w-4 text-[color:var(--ap-burnt-orange)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                    IRS Tax History
+                  </a>
+                  <div className="my-1 border-t border-white/10" />
+                  <a href="https://anchorpointaccounting.taxdome.com" target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-md px-3 py-2 text-sm normal-case tracking-normal text-[color:var(--ap-burnt-orange)] transition-colors hover:bg-white/10">
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                    Client Portal
+                  </a>
+                </div>
+              )}
+            </div>
             <a
               href="https://anchorpointaccounting.taxdome.com"
               target="_blank"
