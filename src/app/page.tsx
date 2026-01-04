@@ -147,20 +147,16 @@ export default function Home() {
 
                 <div className="mt-10 flex flex-wrap justify-center gap-x-10 gap-y-3 md:justify-start">
                   <div>
-                    <p className="text-sm font-semibold text-white">Quick responses</p>
-                    <p className="text-xs text-[color:var(--ap-cream)]/50">Communication</p>
-                  </div>
-                  <div>
                     <p className="text-sm font-semibold text-white">Proactive flagging</p>
                     <p className="text-xs text-[color:var(--ap-cream)]/50">Issues caught early</p>
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-white">Audit-ready</p>
-                    <p className="text-xs text-[color:var(--ap-cream)]/50">Organization</p>
-                  </div>
-                  <div>
                     <p className="text-sm font-semibold text-white">Real support</p>
                     <p className="text-xs text-[color:var(--ap-cream)]/50">Human</p>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-white">Experience</p>
+                    <p className="text-xs text-[color:var(--ap-cream)]/50">Over two decades</p>
                   </div>
                 </div>
               </div>
