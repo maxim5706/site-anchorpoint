@@ -66,7 +66,7 @@ export default function Home() {
                       </div>
 
           <div className="relative mx-auto max-w-6xl px-6 pb-10 pt-8 md:pb-14 md:pt-10">
-            <div className="grid items-start gap-10 md:grid-cols-2">
+            <div className="grid items-center gap-10 md:grid-cols-[1fr,380px]">
               <div>
                 <h1
                   className="text-4xl font-semibold leading-[1.08] tracking-tight text-white md:text-5xl"
@@ -99,7 +99,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="relative hidden md:block md:max-w-[340px] md:justify-self-end">
+              <div className="relative hidden md:block">
                 <div className="relative rounded-xl border border-white/10 bg-white/[0.02] p-6">
                   <div className="flex items-center justify-center">
                     <Image
