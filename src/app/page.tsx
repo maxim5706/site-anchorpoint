@@ -484,16 +484,28 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="mt-6 space-y-3">
+                  {officeStatus.isOpen && (
+                    <div className="mb-3 flex items-center justify-center gap-2 rounded-lg bg-green-500/10 px-4 py-2">
+                      <div className="h-2 w-2 animate-pulse rounded-full bg-green-500" />
+                      <span className="text-sm font-semibold text-green-700">Currently Open</span>
+                    </div>
+                  )}
+                  {!officeStatus.isOpen && (
+                    <div className="mb-3 flex items-center justify-center gap-2 rounded-lg bg-red-500/10 px-4 py-2">
+                      <div className="h-2 w-2 rounded-full bg-red-500" />
+                      <span className="text-sm font-semibold text-red-700">Currently Closed</span>
+                    </div>
+                  )}
                   <div className="flex items-center justify-between rounded-lg bg-[color:var(--ap-cream)]/50 px-4 py-3">
                     <div className="flex items-center gap-3">
-                      <div className={`h-2 w-2 rounded-full ${officeStatus.weekdayOpen ? 'bg-green-500' : 'bg-red-500'}`} />
+                      <div className="h-2 w-2 rounded-full bg-green-500" />
                       <span className="text-sm font-medium text-[color:var(--ap-navy)]">Monday – Friday</span>
                     </div>
                     <span className="text-sm font-semibold text-[color:var(--ap-navy)]">9 AM – 5 PM</span>
                   </div>
                   <div className="flex items-center justify-between rounded-lg bg-[color:var(--ap-cream)]/50 px-4 py-3">
                     <div className="flex items-center gap-3">
-                      <div className={`h-2 w-2 rounded-full ${officeStatus.saturdayOpen ? 'bg-green-500' : 'bg-red-500'}`} />
+                      <div className="h-2 w-2 rounded-full bg-green-500" />
                       <span className="text-sm font-medium text-[color:var(--ap-navy)]">Saturday</span>
                     </div>
                     <span className="text-sm font-semibold text-[color:var(--ap-navy)]">10 AM – 4 PM</span>
@@ -531,7 +543,7 @@ export default function Home() {
 
         <Testimonials />
 
-        <section className="bg-[color:var(--ap-burgundy)] py-24 md:py-28">
+        <section className="bg-[color:var(--ap-burgundy)] py-16 md:py-20">
           <div className="mx-auto max-w-2xl px-6 text-center">
             <h2
               className="text-2xl font-semibold text-white md:text-3xl"

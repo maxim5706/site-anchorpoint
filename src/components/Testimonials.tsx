@@ -37,7 +37,7 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-[color:var(--ap-navy)] py-28 md:py-32">
+    <section className="relative overflow-hidden bg-[color:var(--ap-navy)] py-16 md:py-20">
       <div 
         className="wave-pattern absolute inset-0 opacity-[0.12]"
         style={{
