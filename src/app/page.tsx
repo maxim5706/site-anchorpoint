@@ -60,7 +60,7 @@ export default function Home() {
               alt=""
               width={600}
               height={600}
-              className="absolute right-8 top-1/2 h-[450px] w-[450px] -translate-y-1/2 object-contain opacity-[0.05] md:right-16 md:h-[600px] md:w-[600px]"
+              className="absolute left-1/2 top-1/2 h-[900px] w-[900px] -translate-x-1/2 -translate-y-1/2 object-contain opacity-[0.05] md:h-[1200px] md:w-[1200px]"
               aria-hidden="true"
             />
                       </div>
