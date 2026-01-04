@@ -74,29 +74,6 @@ const services = [
     process: "Each month, we reconcile your accounts, categorize transactions, and deliver clear financial reports. You'll always know where your business stands.",
   },
   {
-    id: "payroll",
-    title: "Payroll Services",
-    shortDesc: "Accurate and timely payroll processing for your business.",
-    icon: (
-      <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-    ),
-    fullTitle: "Payroll Processing Services",
-    description: "Payroll shouldn't be a headache. We handle all the details—from calculating wages and withholdings to filing payroll taxes—so your employees get paid accurately and on time, every time.",
-    features: [
-      "Weekly, bi-weekly, or monthly processing",
-      "Direct deposit setup and management",
-      "Federal and state tax withholdings",
-      "Payroll tax deposits and filings",
-      "W-2 and 1099 year-end preparation",
-      "New hire reporting and onboarding",
-      "PTO and benefits tracking",
-      "Payroll reports and summaries",
-    ],
-    process: "Simply submit your hours and we handle the rest. We process payroll on your schedule and keep you compliant with all tax requirements.",
-  },
-  {
     id: "nonprofit",
     title: "Non-Profit Tax Prep",
     shortDesc: "Specialized preparation for 501(c)(3) and other non-profit organizations.",
