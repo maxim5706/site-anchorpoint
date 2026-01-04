@@ -37,7 +37,7 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-[color:var(--ap-navy)] py-24 md:py-28">
+    <section className="relative overflow-hidden bg-[color:var(--ap-navy)] py-28 md:py-32">
       <div 
         className="wave-pattern absolute inset-0 opacity-[0.12]"
         style={{
@@ -59,7 +59,7 @@ export default function Testimonials() {
         </div>
 
         <div className="mx-auto max-w-3xl">
-          <div className="relative rounded-lg bg-white px-8 py-12 md:px-12 md:py-14">
+          <div className="relative rounded-lg bg-white px-10 py-14 md:px-14 md:py-16">
             <svg 
               className="absolute left-6 top-6 h-10 w-10 text-[color:var(--ap-burgundy)] opacity-15 md:h-12 md:w-12" 
               fill="currentColor" 
@@ -88,7 +88,7 @@ export default function Testimonials() {
           <div className="mt-6 flex items-center justify-center space-x-3">
             <button
               onClick={prevTestimonial}
-              className="rounded-full p-2 text-white/40 transition-colors hover:text-white"
+              className="rounded-full p-2 text-white/25 transition-colors hover:text-white/60"
               aria-label="Previous testimonial"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -103,8 +103,8 @@ export default function Testimonials() {
                   onClick={() => setCurrentIndex(index)}
                   className={`h-1.5 rounded-full transition-all duration-200 ${
                     index === currentIndex
-                      ? "w-4 bg-[color:var(--ap-cream)]/60"
-                      : "w-1.5 bg-white/20 hover:bg-white/30"
+                      ? "w-4 bg-[color:var(--ap-cream)]/40"
+                      : "w-1.5 bg-white/15 hover:bg-white/25"
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
@@ -113,7 +113,7 @@ export default function Testimonials() {
 
             <button
               onClick={nextTestimonial}
-              className="rounded-full p-2 text-white/40 transition-colors hover:text-white"
+              className="rounded-full p-2 text-white/25 transition-colors hover:text-white/60"
               aria-label="Next testimonial"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
