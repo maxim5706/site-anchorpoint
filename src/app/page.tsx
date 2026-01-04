@@ -169,19 +169,10 @@ export default function Home() {
                   Accurate bookkeeping and tax preparation, with proactive guidance you can rely on.
                 </p>
 
-                <div className="mt-10 flex flex-wrap justify-center gap-x-10 gap-y-3 md:justify-start">
-                  <div>
-                    <p className="text-sm font-semibold text-white">Proactive flagging</p>
-                    <p className="text-xs text-[color:var(--ap-cream)]/50">Issues caught early</p>
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-white">Real support</p>
-                    <p className="text-xs text-[color:var(--ap-cream)]/50">Human</p>
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-white">Experience</p>
-                    <p className="text-xs text-[color:var(--ap-cream)]/50">Over two decades</p>
-                  </div>
+                <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-3 md:justify-start">
+                  <p className="text-sm font-medium text-white">Issues caught early</p>
+                  <p className="text-sm font-medium text-white">Real support</p>
+                  <p className="text-sm font-medium text-white">Two decades experience</p>
                 </div>
               </div>
 
