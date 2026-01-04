@@ -1,12 +1,23 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Testimonials from "@/components/Testimonials";
 import MobileNav from "@/components/MobileNav";
 
 export default function Home() {
   const [quickLinksOpen, setQuickLinksOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setQuickLinksOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
     <div className="min-h-screen" style={{ background: "var(--ap-cream)" }}>
@@ -43,12 +54,12 @@ export default function Home() {
             >
               Contact
             </a>
-            <div className="relative">
+            <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setQuickLinksOpen(!quickLinksOpen)}
                 className="flex items-center gap-1 border-b-2 border-transparent pb-0.5 text-white/70 transition-colors hover:text-white"
               >
-                Quick Links
+                QUICK LINKS
                 <svg className={`h-3 w-3 transition-transform ${quickLinksOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
