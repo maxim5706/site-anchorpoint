@@ -181,7 +181,7 @@ export default function ServicesPage() {
         {/* Quick Cards */}
         <section className="-mt-8 pb-10">
           <div className="mx-auto max-w-6xl px-6">
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {services.map((service) => (
                 <button
                   key={service.id}
@@ -192,11 +192,13 @@ export default function ServicesPage() {
                       : "border-[color:var(--ap-navy)]/8"
                   }`}
                 >
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-[color:var(--ap-navy)]">
-                    {service.icon}
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[color:var(--ap-navy)]">
+                      {service.icon}
+                    </div>
+                    <h3 className="font-semibold text-[color:var(--ap-navy)]">{service.title}</h3>
                   </div>
-                  <h3 className="font-semibold text-[color:var(--ap-navy)]">{service.title}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-[color:var(--ap-navy)]/60">
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-[color:var(--ap-navy)]/60">
                     {service.shortDesc}
                   </p>
                   <p className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[color:var(--ap-burgundy)] group-hover:underline">
