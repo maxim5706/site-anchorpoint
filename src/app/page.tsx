@@ -125,7 +125,7 @@ export default function Home() {
               alt=""
               width={600}
               height={600}
-              className="absolute right-0 bottom-0 h-[550px] w-[550px] translate-x-[20%] translate-y-[15%] object-contain opacity-[0.17] md:h-[700px] md:w-[700px]"
+              className="absolute right-0 bottom-0 h-[550px] w-[550px] translate-x-[20%] translate-y-[15%] object-contain opacity-[0.22] md:h-[700px] md:w-[700px]"
               aria-hidden="true"
             />
                       </div>
