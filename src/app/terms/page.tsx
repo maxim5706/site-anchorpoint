@@ -1,4 +1,5 @@
 import Image from "next/image";
+import MobileNav from "@/components/MobileNav";
 
 export default function TermsPage() {
   return (
@@ -14,6 +15,7 @@ export default function TermsPage() {
               priority
             />
           </a>
+          <MobileNav />
           <nav className="hidden items-center gap-7 text-[13px] font-semibold uppercase tracking-wide md:flex">
             <a href="/" className="border-b-2 border-transparent pb-0.5 text-white/70 transition-colors hover:text-white">Home</a>
             <a href="/services" className="border-b-2 border-transparent pb-0.5 text-white/70 transition-colors hover:text-white">Services</a>

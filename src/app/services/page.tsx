@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import MobileNav from "@/components/MobileNav";
 
 const services = [
   {
@@ -139,6 +140,7 @@ export default function ServicesPage() {
               priority
             />
           </a>
+          <MobileNav currentPage="services" />
           <nav className="hidden items-center gap-7 text-[13px] font-semibold uppercase tracking-wide md:flex">
             <a href="/" className="border-b-2 border-transparent pb-0.5 text-white/70 transition-colors hover:text-white">Home</a>
             <a href="/services" className="border-b-2 border-white pb-0.5 text-white">Services</a>

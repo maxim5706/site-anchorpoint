@@ -1,4 +1,5 @@
 import Image from "next/image";
+import MobileNav from "@/components/MobileNav";
 
 export default function ContactPage() {
   return (
@@ -14,6 +15,7 @@ export default function ContactPage() {
               priority
             />
           </a>
+          <MobileNav currentPage="contact" />
           <nav className="hidden items-center gap-7 text-[13px] font-semibold uppercase tracking-wide md:flex">
             <a href="/" className="border-b-2 border-transparent pb-0.5 text-white/70 transition-colors hover:text-white">Home</a>
             <a href="/services" className="border-b-2 border-transparent pb-0.5 text-white/70 transition-colors hover:text-white">Services</a>
@@ -102,8 +104,8 @@ export default function ContactPage() {
                   <div>
                     <p className="text-sm font-semibold text-[color:var(--ap-navy)]">Location</p>
                     <p className="mt-1 text-sm text-[color:var(--ap-navy)]/70">
-                      Goose Creek, SC<br />
-                      Serving clients nationwide
+                      300 Red Bank Rd<br />
+                      Goose Creek, SC 29445
                     </p>
                   </div>
                 </div>

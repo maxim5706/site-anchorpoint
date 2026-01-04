@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Testimonials from "@/components/Testimonials";
+import MobileNav from "@/components/MobileNav";
 
 export default function Home() {
   return (
@@ -16,14 +17,7 @@ export default function Home() {
             />
           </a>
 
-          <button
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/20 md:hidden"
-            aria-label="Open menu"
-          >
-            <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+          <MobileNav currentPage="home" />
 
           <nav className="hidden items-center gap-7 text-[13px] font-semibold uppercase tracking-wide md:flex">
             <a
@@ -497,7 +491,7 @@ export default function Home() {
               <div className="mt-3 space-y-1">
                 <p className="text-sm font-medium text-white">(843) 797-5185</p>
                 <p className="text-sm text-[color:var(--ap-cream)]/60">Accounting@teamanchorpoint.com</p>
-                <p className="mt-2 text-xs text-[color:var(--ap-cream)]/40">Goose Creek, SC</p>
+                <p className="mt-2 text-xs text-[color:var(--ap-cream)]/40">300 Red Bank Rd, Goose Creek, SC 29445</p>
                 <p className="text-xs text-[color:var(--ap-cream)]/40">Mon–Fri 9–5 · Sat 10–4</p>
               </div>
             </div>
