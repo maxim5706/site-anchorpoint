@@ -179,29 +179,25 @@ export default function ServicesPage() {
         </section>
 
         {/* Quick Cards */}
-        <section className="py-14 md:py-16">
+        <section className="-mt-8 pb-10">
           <div className="mx-auto max-w-6xl px-6">
-            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-5">
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
               {services.map((service) => (
                 <button
                   key={service.id}
                   onClick={() => handleCardClick(service.id)}
-                  className={`group flex flex-col rounded-xl border bg-white p-5 text-left shadow-sm transition-all hover:shadow-lg hover:-translate-y-0.5 ${
+                  className={`group flex flex-col rounded-xl border bg-white p-5 text-left shadow-sm transition-all hover:shadow-md ${
                     openSection === service.id 
                       ? "border-[color:var(--ap-burgundy)]/30 ring-2 ring-[color:var(--ap-burgundy)]/20" 
                       : "border-[color:var(--ap-navy)]/8"
                   }`}
                 >
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[color:var(--ap-navy)]">
-                    {service.icon}
+                  <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-[color:var(--ap-navy)]/10">
+                    <div className="text-[color:var(--ap-navy)]">{service.icon}</div>
                   </div>
                   <h3 className="font-semibold text-[color:var(--ap-navy)]">{service.title}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-[color:var(--ap-navy)]/60">
-                    {service.shortDesc}
-                  </p>
-                  <p className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[color:var(--ap-burgundy)] group-hover:underline">
-                    {openSection === service.id ? "View details" : "Learn more"}{" "}
-                    <span aria-hidden className="transition-transform group-hover:translate-x-0.5">↓</span>
+                  <p className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-[color:var(--ap-burgundy)]">
+                    View details <span aria-hidden className="transition-transform group-hover:translate-y-0.5">↓</span>
                   </p>
                 </button>
               ))}
@@ -210,18 +206,12 @@ export default function ServicesPage() {
         </section>
 
         {/* Detail Sections */}
-        <section className="border-t border-[color:var(--ap-navy)]/8 bg-white py-16 md:py-20">
+        <section className="bg-white py-12 md:py-16">
           <div className="mx-auto max-w-4xl px-6">
-            <div className="mb-10 text-center">
-              <h2
-                className="text-2xl font-semibold text-[color:var(--ap-navy)] md:text-3xl"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                Service Details
-              </h2>
-              <p className="mx-auto mt-2 max-w-lg text-sm text-[color:var(--ap-navy)]/50">
-                Click a service above or expand below to learn more.
-              </p>
+            <div className="mb-8 flex items-center gap-3">
+              <div className="h-px flex-1 bg-[color:var(--ap-navy)]/10" />
+              <p className="text-xs font-medium uppercase tracking-wide text-[color:var(--ap-navy)]/40">In-depth details</p>
+              <div className="h-px flex-1 bg-[color:var(--ap-navy)]/10" />
             </div>
 
             <div className="space-y-4">
