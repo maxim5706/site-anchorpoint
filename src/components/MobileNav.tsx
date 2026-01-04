@@ -1,6 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+function getOfficeStatus() {
+  const now = new Date();
+  const day = now.getDay();
+  const hour = now.getHours();
+  
+  if (day >= 1 && day <= 5) {
+    return { weekdayOpen: hour >= 9 && hour < 17, saturdayOpen: false };
+  }
+  if (day === 6) {
+    return { weekdayOpen: false, saturdayOpen: hour >= 10 && hour < 16 };
+  }
+  return { weekdayOpen: false, saturdayOpen: false };
+}
 
 interface MobileNavProps {
   currentPage?: "home" | "services" | "contact";
@@ -8,6 +22,13 @@ interface MobileNavProps {
 
 export default function MobileNav({ currentPage = "home" }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [officeStatus, setOfficeStatus] = useState({ weekdayOpen: false, saturdayOpen: false });
+
+  useEffect(() => {
+    setOfficeStatus(getOfficeStatus());
+    const interval = setInterval(() => setOfficeStatus(getOfficeStatus()), 60000);
+    return () => clearInterval(interval);
+  }, []);
 
   const address = "300 Red Bank Rd, Goose Creek, SC 29445";
   const encodedAddress = encodeURIComponent(address);
@@ -138,14 +159,14 @@ export default function MobileNav({ currentPage = "home" }: MobileNavProps) {
             <div className="rounded-lg bg-white/5 p-3">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-green-500" />
+                  <div className={`h-2 w-2 rounded-full ${officeStatus.weekdayOpen ? 'bg-green-500' : 'bg-red-500'}`} />
                   <span className="text-sm text-white/70">Mon – Fri</span>
                 </div>
                 <span className="text-sm font-medium text-white">9 AM – 5 PM</span>
               </div>
               <div className="mt-2 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-green-500" />
+                  <div className={`h-2 w-2 rounded-full ${officeStatus.saturdayOpen ? 'bg-green-500' : 'bg-red-500'}`} />
                   <span className="text-sm text-white/70">Saturday</span>
                 </div>
                 <span className="text-sm font-medium text-white">10 AM – 4 PM</span>

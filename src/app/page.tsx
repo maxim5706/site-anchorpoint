@@ -6,9 +6,33 @@ import Testimonials from "@/components/Testimonials";
 import MobileNav from "@/components/MobileNav";
 import Footer from "@/components/Footer";
 
+function getOfficeStatus() {
+  const now = new Date();
+  const day = now.getDay(); // 0 = Sunday, 6 = Saturday
+  const hour = now.getHours();
+  
+  // Monday-Friday: 9 AM - 5 PM
+  if (day >= 1 && day <= 5) {
+    return { weekdayOpen: hour >= 9 && hour < 17, saturdayOpen: false, isOpen: hour >= 9 && hour < 17 };
+  }
+  // Saturday: 10 AM - 4 PM
+  if (day === 6) {
+    return { weekdayOpen: false, saturdayOpen: hour >= 10 && hour < 16, isOpen: hour >= 10 && hour < 16 };
+  }
+  // Sunday: Closed
+  return { weekdayOpen: false, saturdayOpen: false, isOpen: false };
+}
+
 export default function Home() {
   const [quickLinksOpen, setQuickLinksOpen] = useState(false);
+  const [officeStatus, setOfficeStatus] = useState({ weekdayOpen: false, saturdayOpen: false, isOpen: false });
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setOfficeStatus(getOfficeStatus());
+    const interval = setInterval(() => setOfficeStatus(getOfficeStatus()), 60000);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -462,21 +486,21 @@ export default function Home() {
                 <div className="mt-6 space-y-3">
                   <div className="flex items-center justify-between rounded-lg bg-[color:var(--ap-cream)]/50 px-4 py-3">
                     <div className="flex items-center gap-3">
-                      <div className="h-2 w-2 rounded-full bg-green-500" />
+                      <div className={`h-2 w-2 rounded-full ${officeStatus.weekdayOpen ? 'bg-green-500' : 'bg-red-500'}`} />
                       <span className="text-sm font-medium text-[color:var(--ap-navy)]">Monday – Friday</span>
                     </div>
                     <span className="text-sm font-semibold text-[color:var(--ap-navy)]">9 AM – 5 PM</span>
                   </div>
                   <div className="flex items-center justify-between rounded-lg bg-[color:var(--ap-cream)]/50 px-4 py-3">
                     <div className="flex items-center gap-3">
-                      <div className="h-2 w-2 rounded-full bg-green-500" />
+                      <div className={`h-2 w-2 rounded-full ${officeStatus.saturdayOpen ? 'bg-green-500' : 'bg-red-500'}`} />
                       <span className="text-sm font-medium text-[color:var(--ap-navy)]">Saturday</span>
                     </div>
                     <span className="text-sm font-semibold text-[color:var(--ap-navy)]">10 AM – 4 PM</span>
                   </div>
                   <div className="flex items-center justify-between rounded-lg bg-[color:var(--ap-navy)]/5 px-4 py-3">
                     <div className="flex items-center gap-3">
-                      <div className="h-2 w-2 rounded-full bg-[color:var(--ap-navy)]/30" />
+                      <div className="h-2 w-2 rounded-full bg-red-500" />
                       <span className="text-sm text-[color:var(--ap-navy)]/50">Sunday</span>
                     </div>
                     <span className="text-sm text-[color:var(--ap-navy)]/50">Closed</span>
