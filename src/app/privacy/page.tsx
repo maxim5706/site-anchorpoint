@@ -4,7 +4,7 @@ import MobileNav from "@/components/MobileNav";
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen" style={{ background: "var(--ap-cream)" }}>
-      <header className="sticky top-0 z-40 border-b border-[color:var(--ap-navy)]/20 bg-[color:var(--ap-navy)] backdrop-blur">
+      <header className="sticky top-0 z-40 bg-[color:var(--ap-navy)]">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a href="/" className="flex items-center gap-3">
             <Image
@@ -30,6 +30,7 @@ export default function PrivacyPage() {
             </a>
           </nav>
         </div>
+        <div className="h-[2px] bg-gradient-to-r from-transparent via-[color:var(--ap-burnt-orange)] to-transparent opacity-70" />
       </header>
 
       <main className="mx-auto max-w-3xl px-6 py-16 md:py-20">
