@@ -75,7 +75,7 @@ export default function Home() {
             </svg>
           </div>
 
-          <div className="relative mx-auto max-w-6xl px-6 pb-12 pt-10 md:pb-16 md:pt-12">
+          <div className="relative mx-auto max-w-6xl px-6 pb-10 pt-8 md:pb-14 md:pt-10">
             <div className="grid items-start gap-10 md:grid-cols-2">
               <div>
                 <h1
@@ -85,11 +85,11 @@ export default function Home() {
                   Your Financial Anchor in a Sea of Uncertainty
                 </h1>
 
-                <p className="mt-6 max-w-md text-base leading-7 text-[color:var(--ap-cream)]/75">
+                <p className="mt-5 max-w-md text-base leading-7 text-[color:var(--ap-cream)]/75">
                   Accurate bookkeeping and tax preparation, with proactive guidance you can rely on.
                 </p>
 
-                <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+                <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-4">
                   <div>
                     <p className="text-sm font-semibold text-white">Quick responses</p>
                     <p className="text-xs text-[color:var(--ap-cream)]/50">Communication</p>
@@ -159,7 +159,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-16 md:py-20">
+        <section className="py-14 md:py-18">
           <div className="mx-auto max-w-6xl px-6">
             <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
               <div>
@@ -181,10 +181,10 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
               <a
                 href="/services#individual"
-                className="group flex flex-col rounded-xl border border-[color:var(--ap-navy)]/10 bg-white p-5 shadow-sm transition-all hover:border-[color:var(--ap-burgundy)]/20 hover:shadow-md"
+                className="group flex flex-col rounded-xl border border-[color:var(--ap-navy)]/8 bg-white p-5 shadow-sm transition-all hover:shadow-lg hover:-translate-y-0.5"
               >
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[color:var(--ap-navy)]">
                   <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -202,7 +202,7 @@ export default function Home() {
 
               <a
                 href="/services#business"
-                className="group flex flex-col rounded-xl border border-[color:var(--ap-navy)]/10 bg-white p-5 shadow-sm transition-all hover:border-[color:var(--ap-burgundy)]/20 hover:shadow-md"
+                className="group flex flex-col rounded-xl border border-[color:var(--ap-navy)]/8 bg-white p-5 shadow-sm transition-all hover:shadow-lg hover:-translate-y-0.5"
               >
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[color:var(--ap-navy)]">
                   <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -220,7 +220,7 @@ export default function Home() {
 
               <a
                 href="/services#bookkeeping"
-                className="group flex flex-col rounded-xl border border-[color:var(--ap-navy)]/10 bg-white p-5 shadow-sm transition-all hover:border-[color:var(--ap-burgundy)]/20 hover:shadow-md"
+                className="group flex flex-col rounded-xl border border-[color:var(--ap-navy)]/8 bg-white p-5 shadow-sm transition-all hover:shadow-lg hover:-translate-y-0.5"
               >
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[color:var(--ap-navy)]">
                   <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -238,7 +238,7 @@ export default function Home() {
 
               <a
                 href="/services#nonprofit"
-                className="group flex flex-col rounded-xl border border-[color:var(--ap-navy)]/10 bg-white p-5 shadow-sm transition-all hover:border-[color:var(--ap-burgundy)]/20 hover:shadow-md"
+                className="group flex flex-col rounded-xl border border-[color:var(--ap-navy)]/8 bg-white p-5 shadow-sm transition-all hover:shadow-lg hover:-translate-y-0.5"
               >
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[color:var(--ap-navy)]">
                   <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -309,7 +309,7 @@ export default function Home() {
         </section>
         */}
 
-        <section className="border-t border-[color:var(--ap-navy)]/8 bg-white py-16 md:py-20">
+        <section className="mt-4 border-t border-[color:var(--ap-navy)]/6 bg-white py-16 md:py-20">
           <div className="mx-auto max-w-6xl px-6">
             <div className="mb-10 text-center">
               <h2
@@ -323,7 +323,7 @@ export default function Home() {
               </p>
             </div>
             <div className="grid gap-6 md:grid-cols-2">
-              <div className="rounded-xl border border-[color:var(--ap-navy)]/10 bg-white p-6 shadow-md md:p-8">
+              <div className="rounded-xl border border-[color:var(--ap-navy)]/8 bg-white p-6 shadow-sm md:p-8">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[color:var(--ap-navy)]">
                     <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -387,7 +387,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="rounded-xl border border-[color:var(--ap-navy)]/10 bg-white p-6 shadow-md md:p-8">
+              <div className="rounded-xl border border-[color:var(--ap-navy)]/8 bg-white p-6 shadow-sm md:p-8">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[color:var(--ap-burnt-orange)]">
                     <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -439,7 +439,7 @@ export default function Home() {
 
         <Testimonials />
 
-        <section className="bg-[color:var(--ap-burgundy)] py-20 md:py-24">
+        <section className="bg-[color:var(--ap-burgundy)] py-24 md:py-28">
           <div className="mx-auto max-w-2xl px-6 text-center">
             <h2
               className="text-2xl font-semibold text-white md:text-3xl"
@@ -460,9 +460,9 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-[color:var(--ap-navy)]">
-        <div className="mx-auto max-w-6xl px-6 py-10">
-          <div className="grid gap-8 md:grid-cols-4">
+      <footer className="border-t border-white/5 bg-[color:var(--ap-navy)]">
+        <div className="mx-auto max-w-6xl px-6 py-12">
+          <div className="grid gap-10 md:grid-cols-4">
             <div>
               <Image
                 src="/brand/logo-side-cream.png"
@@ -476,7 +476,7 @@ export default function Home() {
             </div>
             <div>
               <p className="text-xs font-semibold uppercase tracking-wide text-white/70">Navigate</p>
-              <ul className="mt-3 space-y-2 text-sm text-[color:var(--ap-cream)]/60">
+              <ul className="mt-3 space-y-2.5 text-sm leading-relaxed text-[color:var(--ap-cream)]/60">
                 <li><a className="hover:text-white" href="/">Home</a></li>
                 <li><a className="hover:text-white" href="/services">Services</a></li>
                 <li><a className="hover:text-white" href="/contact">Contact</a></li>
@@ -485,7 +485,7 @@ export default function Home() {
             </div>
             <div>
               <p className="text-xs font-semibold uppercase tracking-wide text-white/70">Services</p>
-              <ul className="mt-3 space-y-2 text-sm text-[color:var(--ap-cream)]/60">
+              <ul className="mt-3 space-y-2.5 text-sm leading-relaxed text-[color:var(--ap-cream)]/60">
                 <li><a className="hover:text-white" href="/services">Individual Tax Prep</a></li>
                 <li><a className="hover:text-white" href="/services">Business Tax & Consulting</a></li>
                 <li><a className="hover:text-white" href="/services">Bookkeeping</a></li>
