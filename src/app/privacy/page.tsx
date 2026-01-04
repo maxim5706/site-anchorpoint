@@ -30,7 +30,7 @@ export default function PrivacyPage() {
             </a>
           </nav>
         </div>
-        <div className="h-[2px] bg-gradient-to-r from-transparent via-[color:var(--ap-burnt-orange)] to-transparent opacity-70" />
+        <div className="h-1 bg-gradient-to-r from-transparent via-[color:var(--ap-burnt-orange)] to-transparent" />
       </header>
 
       <main className="mx-auto max-w-3xl px-6 py-16 md:py-20">

@@ -75,7 +75,7 @@ export default function ContactPage() {
             </a>
           </nav>
         </div>
-        <div className="h-[2px] bg-gradient-to-r from-transparent via-[color:var(--ap-burnt-orange)] to-transparent opacity-70" />
+        <div className="h-1 bg-gradient-to-r from-transparent via-[color:var(--ap-burnt-orange)] to-transparent" />
       </header>
 
       <main>

@@ -95,7 +95,7 @@ export default function Home() {
                     href="https://sa.www4.irs.gov/wmr/"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-2 rounded-md px-3 py-2 text-sm normal-case tracking-normal text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+                    className="flex items-center gap-2 rounded-md px-3 py-2 text-sm normal-case tracking-normal text-white transition-colors hover:bg-white/10"
                   >
                     <svg className="h-4 w-4 text-[color:var(--ap-burnt-orange)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -106,7 +106,7 @@ export default function Home() {
                     href="https://sa.www4.irs.gov/bola/"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-2 rounded-md px-3 py-2 text-sm normal-case tracking-normal text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+                    className="flex items-center gap-2 rounded-md px-3 py-2 text-sm normal-case tracking-normal text-white transition-colors hover:bg-white/10"
                   >
                     <svg className="h-4 w-4 text-[color:var(--ap-burnt-orange)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
