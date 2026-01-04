@@ -103,10 +103,10 @@ export default function Home() {
                 <div className="relative rounded-xl border border-white/10 bg-white/[0.02] p-6">
                   <div className="flex items-center justify-center">
                     <Image
-                      src="/brand/logo-center-cream.png"
+                      src="/Image.png"
                       alt="Anchor Point Accounting"
-                      width={110}
-                      height={110}
+                      width={100}
+                      height={100}
                     />
                   </div>
                   <div className="mt-4 text-center">
