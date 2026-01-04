@@ -60,12 +60,10 @@ export default function Home() {
               alt=""
               width={600}
               height={600}
-              className="absolute -right-16 top-1/2 h-[400px] w-[400px] -translate-y-1/2 object-contain opacity-[0.08] md:h-[550px] md:w-[550px]"
+              className="absolute -right-16 top-1/2 h-[400px] w-[400px] -translate-y-1/2 object-contain opacity-[0.05] md:h-[550px] md:w-[550px]"
               aria-hidden="true"
             />
-            {/* Burnt orange accent glow */}
-            <div className="absolute -left-32 top-0 h-64 w-64 rounded-full bg-[color:var(--ap-burnt-orange)] opacity-[0.08] blur-3xl" />
-          </div>
+                      </div>
 
           <div className="relative mx-auto max-w-6xl px-6 pb-10 pt-8 md:pb-14 md:pt-10">
             <div className="grid items-start gap-10 md:grid-cols-2">
@@ -102,7 +100,7 @@ export default function Home() {
               </div>
 
               <div className="relative hidden md:block">
-                <div className="relative rounded-lg border border-white/12 bg-white/[0.03] p-6">
+                <div className="relative rounded-xl border border-white/10 bg-white/[0.02] p-6">
                   <div className="flex items-center justify-center">
                     <Image
                       src="/brand/logo-circle-cream.png"
@@ -119,13 +117,13 @@ export default function Home() {
                   <div className="mt-5 space-y-2">
                     <a
                       href="/contact"
-                      className="flex h-11 w-full items-center justify-center rounded bg-[color:var(--ap-burgundy)] text-sm font-semibold text-white transition-colors hover:brightness-110"
+                      className="flex h-11 w-full items-center justify-center rounded-full bg-[color:var(--ap-burgundy)] text-sm font-semibold text-white transition-colors hover:brightness-110"
                     >
                       Schedule Consultation
                     </a>
                     <a
                       href="/services"
-                      className="flex h-11 w-full items-center justify-center rounded border border-white/20 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+                      className="flex h-11 w-full items-center justify-center rounded-full border border-white/20 text-sm font-semibold text-white transition-colors hover:bg-white/10"
                     >
                       View Services
                     </a>
@@ -137,13 +135,13 @@ export default function Home() {
             <div className="mt-8 flex flex-col gap-3 md:hidden">
               <a
                 href="/contact"
-                className="flex h-12 items-center justify-center rounded bg-[color:var(--ap-burgundy)] text-sm font-semibold text-white"
+                className="flex h-11 items-center justify-center rounded-full bg-[color:var(--ap-burgundy)] text-sm font-semibold text-white"
               >
                 Schedule Consultation
               </a>
               <a
                 href="/services"
-                className="flex h-12 items-center justify-center rounded border border-white/25 text-sm font-semibold text-white"
+                className="flex h-11 items-center justify-center rounded-full border border-white/20 text-sm font-semibold text-white"
               >
                 View Services
               </a>
