@@ -7,15 +7,17 @@ import MobileNav from "@/components/MobileNav";
 import Footer from "@/components/Footer";
 
 function getOfficeStatus() {
+  // Use Eastern timezone
   const now = new Date();
-  const day = now.getDay(); // 0 = Sunday, 6 = Saturday
-  const hour = now.getHours();
+  const eastern = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+  const day = eastern.getDay(); // 0 = Sunday, 6 = Saturday
+  const hour = eastern.getHours();
   
-  // Monday-Friday: 9 AM - 5 PM
+  // Monday-Friday: 9 AM - 5 PM ET
   if (day >= 1 && day <= 5) {
     return { weekdayOpen: hour >= 9 && hour < 17, saturdayOpen: false, isOpen: hour >= 9 && hour < 17 };
   }
-  // Saturday: 10 AM - 4 PM
+  // Saturday: 10 AM - 4 PM ET
   if (day === 6) {
     return { weekdayOpen: false, saturdayOpen: hour >= 10 && hour < 16, isOpen: hour >= 10 && hour < 16 };
   }
