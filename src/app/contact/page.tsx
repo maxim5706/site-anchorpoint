@@ -117,7 +117,7 @@ export default function ContactPage() {
       </header>
 
       <main>
-        <section className="bg-[color:var(--ap-navy)] py-16 md:py-20">
+        <section className="bg-[color:var(--ap-navy)] py-10 md:py-12">
           <div className="mx-auto max-w-6xl px-6">
             <div className="max-w-2xl">
               <p className="text-xs font-medium uppercase tracking-wide text-[color:var(--ap-burnt-orange)]">
