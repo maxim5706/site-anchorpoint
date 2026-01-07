@@ -157,76 +157,80 @@ export default function MobileNav({ currentPage = "home" }: MobileNavProps) {
             </div>
           </nav>
 
-          {/* Hours */}
+          {/* Contact Us */}
           <div className="border-t border-white/10 px-4 py-4">
-            <p className="mb-2 px-4 text-xs font-semibold uppercase tracking-wide text-white/50">Office Hours</p>
-            <div className="rounded-lg bg-white/5 p-3">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div className={`h-2 w-2 rounded-full ${officeStatus.weekdayOpen ? 'bg-green-500' : 'bg-white/30'}`} />
-                  <span className="text-sm text-white/70">Mon – Fri</span>
-                </div>
-                <span className="text-sm font-medium text-white">9 AM – 5 PM</span>
-              </div>
-              <div className="mt-2 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div className={`h-2 w-2 rounded-full ${officeStatus.saturdayOpen ? 'bg-green-500' : 'bg-white/30'}`} />
-                  <span className="text-sm text-white/70">Saturday</span>
-                </div>
-                <span className="text-sm font-medium text-white">10 AM – 4 PM</span>
-              </div>
-              <div className="mt-2 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-white/30" />
-                  <span className="text-sm text-white/50">Sunday</span>
-                </div>
-                <span className="text-sm font-medium text-white/50">Closed</span>
-              </div>
+            <p className="mb-3 px-4 text-xs font-semibold uppercase tracking-wide text-white/50">Contact Us</p>
+            <div className="flex gap-2">
+              <a
+                href="tel:+18437975185"
+                className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-[color:var(--ap-burgundy)] px-3 py-3 text-sm font-semibold text-white transition-colors hover:bg-[color:var(--ap-burgundy)]/90"
+              >
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                Call
+              </a>
+              <a
+                href="mailto:Accounting@teamanchorpoint.com"
+                className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-white/10 px-3 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/20"
+              >
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                Email
+              </a>
             </div>
           </div>
 
-          {/* Location & Maps */}
+          {/* Hours & Location */}
           <div className="border-t border-white/10 px-4 py-4">
-            <p className="mb-2 px-4 text-xs font-semibold uppercase tracking-wide text-white/50">Visit Us</p>
-            <div className="rounded-lg bg-white/5 p-4">
-              <p className="text-sm font-medium text-white">300 Red Bank Rd</p>
-              <p className="text-sm text-white/60">Goose Creek, SC 29445</p>
-              
-              <div className="mt-4 flex gap-2">
-                <a
-                  href={`https://maps.google.com/?q=${encodedAddress}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-white px-3 py-2.5 text-xs font-semibold text-[color:var(--ap-navy)] transition-colors hover:bg-white/90"
-                >
-                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                  </svg>
-                  Google Maps
-                </a>
-                <a
-                  href={`https://maps.apple.com/?address=${encodedAddress}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-white/10 px-3 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-white/20"
-                >
-                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                  </svg>
-                  Apple Maps
-                </a>
+            <div className="grid grid-cols-2 gap-3">
+              {/* Hours */}
+              <div className="rounded-lg bg-white/5 p-3">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-white/50">Hours</p>
+                <div className="space-y-1.5 text-xs">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1.5">
+                      <div className={`h-1.5 w-1.5 rounded-full ${officeStatus.weekdayOpen ? 'bg-green-500' : 'bg-white/30'}`} />
+                      <span className="text-white/70">M–F</span>
+                    </div>
+                    <span className="font-medium text-white">9–5</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1.5">
+                      <div className={`h-1.5 w-1.5 rounded-full ${officeStatus.saturdayOpen ? 'bg-green-500' : 'bg-white/30'}`} />
+                      <span className="text-white/70">Sat</span>
+                    </div>
+                    <span className="font-medium text-white">10–4</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1.5">
+                      <div className="h-1.5 w-1.5 rounded-full bg-white/30" />
+                      <span className="text-white/40">Sun</span>
+                    </div>
+                    <span className="text-white/40">Closed</span>
+                  </div>
+                </div>
               </div>
-            </div>
 
-            <a
-              href="tel:+18437975185"
-              className="mt-3 flex items-center justify-center gap-2 rounded-lg bg-[color:var(--ap-burgundy)] px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-[color:var(--ap-burgundy)]/90"
-            >
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              (843) 797-5185
-            </a>
+              {/* Location */}
+              <a
+                href={`https://maps.google.com/?q=${encodedAddress}`}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-lg bg-white/5 p-3 transition-colors hover:bg-white/10"
+              >
+                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-white/50">Location</p>
+                <p className="text-xs font-medium text-white">300 Red Bank Rd</p>
+                <p className="text-xs text-white/60">Goose Creek, SC</p>
+                <p className="mt-2 flex items-center gap-1 text-xs font-medium text-[color:var(--ap-burnt-orange)]">
+                  <svg className="h-3 w-3" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                  Get Directions
+                </p>
+              </a>
+            </div>
           </div>
         </div>
       </div>
