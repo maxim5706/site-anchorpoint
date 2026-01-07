@@ -187,7 +187,7 @@ export default function MobileNav({ currentPage = "home" }: MobileNavProps) {
             <div className="grid grid-cols-2 gap-3">
               {/* Hours */}
               <div className="rounded-lg bg-white/5 p-3">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-white/50">Hours</p>
+                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-white/50">Hours (ET)</p>
                 <div className="space-y-1.5 text-xs">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1.5">

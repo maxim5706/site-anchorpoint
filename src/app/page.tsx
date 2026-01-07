@@ -475,7 +475,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-[color:var(--ap-navy)]">Office Hours</h3>
-                    <p className="text-xs text-[color:var(--ap-navy)]/50">When we're available</p>
+                    <p className="text-xs text-[color:var(--ap-navy)]/50">Eastern Time (ET)</p>
                   </div>
                 </div>
                 <div className="mt-6 space-y-3">
@@ -493,21 +493,21 @@ export default function Home() {
                   )}
                   <div className="flex items-center justify-between rounded-lg bg-[color:var(--ap-cream)]/50 px-4 py-3">
                     <div className="flex items-center gap-3">
-                      <div className="h-2 w-2 rounded-full bg-green-500" />
+                      <div className={`h-2 w-2 rounded-full ${officeStatus.weekdayOpen ? 'bg-green-500' : 'bg-red-500'}`} />
                       <span className="text-sm font-medium text-[color:var(--ap-navy)]">Monday – Friday</span>
                     </div>
                     <span className="text-sm font-semibold text-[color:var(--ap-navy)]">9 AM – 5 PM</span>
                   </div>
                   <div className="flex items-center justify-between rounded-lg bg-[color:var(--ap-cream)]/50 px-4 py-3">
                     <div className="flex items-center gap-3">
-                      <div className="h-2 w-2 rounded-full bg-green-500" />
+                      <div className={`h-2 w-2 rounded-full ${officeStatus.saturdayOpen ? 'bg-green-500' : 'bg-red-500'}`} />
                       <span className="text-sm font-medium text-[color:var(--ap-navy)]">Saturday</span>
                     </div>
                     <span className="text-sm font-semibold text-[color:var(--ap-navy)]">10 AM – 4 PM</span>
                   </div>
                   <div className="flex items-center justify-between rounded-lg bg-[color:var(--ap-navy)]/5 px-4 py-3">
                     <div className="flex items-center gap-3">
-                      <div className="h-2 w-2 rounded-full bg-[color:var(--ap-navy)]/30" />
+                      <div className="h-2 w-2 rounded-full bg-red-500" />
                       <span className="text-sm text-[color:var(--ap-navy)]/50">Sunday</span>
                     </div>
                     <span className="text-sm text-[color:var(--ap-navy)]/50">Closed</span>
