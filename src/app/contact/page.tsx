@@ -347,7 +347,7 @@ export default function ContactPage() {
                       >
                         <option value="">Select a service...</option>
                         <option value="individual-tax">Individual Tax Preparation</option>
-                        <option value="business-tax">Business Tax Preparation</option>
+                        <option value="business-tax">Business Tax Consultation</option>
                         <option value="bookkeeping">Bookkeeping</option>
                         <option value="consulting">Business Consulting</option>
                         <option value="other">Other</option>
