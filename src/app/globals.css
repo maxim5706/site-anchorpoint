@@ -10,9 +10,10 @@
 
 @font-face {
   font-family: 'Brandon Grotesque';
-  src: url('/fonts/brandon-grotesque-regular.woff') format('woff'),
+  src: url('/fonts/brandon-grotesque-medium.otf') format('opentype'),
+       url('/fonts/brandon-grotesque-regular.woff') format('woff'),
        url('/fonts/brandon-grotesque-regular.ttf') format('truetype');
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
