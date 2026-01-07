@@ -324,8 +324,6 @@ export default function ContactPage() {
                         <option value="individual-tax">Individual Tax Preparation</option>
                         <option value="business-tax">Business Tax Preparation</option>
                         <option value="bookkeeping">Bookkeeping</option>
-                        <option value="payroll">Payroll Services</option>
-                        <option value="planning">Financial Planning</option>
                         <option value="consulting">Business Consulting</option>
                         <option value="other">Other</option>
                       </select>
