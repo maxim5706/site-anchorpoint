@@ -200,7 +200,7 @@ export default function ContactPage() {
                   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=300+Red+Bank+Rd,+Goose+Creek,+SC+29445"
                   width="100%"
                   height="200"
-                  style={{ border: 0 }}
+                  style={{ border: 0, filter: 'grayscale(100%) sepia(30%) saturate(150%) hue-rotate(180deg) brightness(95%) contrast(90%)' }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
