@@ -536,7 +536,7 @@ export default function Home() {
           </div>
         </section>
 
-        <Testimonials />
+        {/* <Testimonials /> */}
 
         <section className="bg-[color:var(--ap-burgundy)] py-16 md:py-20">
           <div className="mx-auto max-w-2xl px-6 text-center">
