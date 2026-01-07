@@ -28,7 +28,7 @@ export default function ContactPage() {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const email = formData.get('email') as string;
+    const email = formData.get('_replyto') as string;
     const phone = formData.get('phone') as string;
 
     // Validate email OR phone required
@@ -290,7 +290,7 @@ export default function ContactPage() {
                         <input
                           type="email"
                           id="email"
-                          name="email"
+                          name="_replyto"
                           className="mt-1.5 block w-full rounded-lg border border-black/15 bg-white px-4 py-2.5 text-sm text-[color:var(--ap-navy)] placeholder-[color:var(--ap-navy)]/40 focus:border-[color:var(--ap-navy)] focus:outline-none focus:ring-1 focus:ring-[color:var(--ap-navy)]"
                           placeholder="john@example.com"
                         />
