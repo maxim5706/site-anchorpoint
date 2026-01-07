@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 
 export default function ContactPage() {
   const [quickLinksOpen, setQuickLinksOpen] = useState(false);
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [formError, setFormError] = useState('');
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -18,6 +20,42 @@ export default function ContactPage() {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormStatus('submitting');
+    setFormError('');
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const email = formData.get('email') as string;
+    const phone = formData.get('phone') as string;
+
+    // Validate email OR phone required
+    if (!email && !phone) {
+      setFormError('Please provide either an email address or phone number.');
+      setFormStatus('error');
+      return;
+    }
+
+    try {
+      const response = await fetch('https://formspree.io/f/xbldnbkp', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        setFormStatus('success');
+        form.reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch {
+      setFormError('Something went wrong. Please try again or call us directly.');
+      setFormStatus('error');
+    }
+  };
 
   return (
     <div className="min-h-screen" style={{ background: "var(--ap-cream)" }}>
@@ -174,114 +212,149 @@ export default function ContactPage() {
             </div>
 
             <div className="rounded-2xl border border-black/10 bg-white/60 p-6 md:p-8">
-              <h2
-                className="text-xl font-semibold text-[color:var(--ap-navy)]"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                Send Us a Message
-              </h2>
-              <p className="mt-2 text-sm text-[color:var(--ap-navy)]/70">
-                Fill out the form below and we'll get back to you within 1 business day.
-              </p>
-
-              <form action="https://formspree.io/f/xbldnbkp" method="POST" className="mt-6 space-y-5">
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-[color:var(--ap-navy)]">
-                      First Name
-                    </label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      name="firstName"
-                      required
-                      className="mt-1.5 block w-full rounded-lg border border-black/15 bg-white px-4 py-2.5 text-sm text-[color:var(--ap-navy)] placeholder-[color:var(--ap-navy)]/40 focus:border-[color:var(--ap-navy)] focus:outline-none focus:ring-1 focus:ring-[color:var(--ap-navy)]"
-                      placeholder="John"
-                    />
+              {formStatus === 'success' ? (
+                <div className="py-8 text-center">
+                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
+                    <svg className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
                   </div>
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-[color:var(--ap-navy)]">
-                      Last Name
-                    </label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      required
-                      className="mt-1.5 block w-full rounded-lg border border-black/15 bg-white px-4 py-2.5 text-sm text-[color:var(--ap-navy)] placeholder-[color:var(--ap-navy)]/40 focus:border-[color:var(--ap-navy)] focus:outline-none focus:ring-1 focus:ring-[color:var(--ap-navy)]"
-                      placeholder="Smith"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-[color:var(--ap-navy)]">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="mt-1.5 block w-full rounded-lg border border-black/15 bg-white px-4 py-2.5 text-sm text-[color:var(--ap-navy)] placeholder-[color:var(--ap-navy)]/40 focus:border-[color:var(--ap-navy)] focus:outline-none focus:ring-1 focus:ring-[color:var(--ap-navy)]"
-                    placeholder="john@example.com"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-[color:var(--ap-navy)]">
-                    Phone (optional)
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    className="mt-1.5 block w-full rounded-lg border border-black/15 bg-white px-4 py-2.5 text-sm text-[color:var(--ap-navy)] placeholder-[color:var(--ap-navy)]/40 focus:border-[color:var(--ap-navy)] focus:outline-none focus:ring-1 focus:ring-[color:var(--ap-navy)]"
-                    placeholder="(555) 555-5555"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-[color:var(--ap-navy)]">
-                    Service Interest
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    className="mt-1.5 block w-full rounded-lg border border-black/15 bg-white px-4 py-2.5 text-sm text-[color:var(--ap-navy)] focus:border-[color:var(--ap-navy)] focus:outline-none focus:ring-1 focus:ring-[color:var(--ap-navy)]"
+                  <h2
+                    className="text-xl font-semibold text-[color:var(--ap-navy)]"
+                    style={{ fontFamily: "var(--font-display)" }}
                   >
-                    <option value="">Select a service...</option>
-                    <option value="individual-tax">Individual Tax Preparation</option>
-                    <option value="business-tax">Business Tax Preparation</option>
-                    <option value="bookkeeping">Bookkeeping</option>
-                    <option value="payroll">Payroll Services</option>
-                    <option value="planning">Financial Planning</option>
-                    <option value="consulting">Business Consulting</option>
-                    <option value="other">Other</option>
-                  </select>
+                    Thank You!
+                  </h2>
+                  <p className="mt-3 text-sm text-[color:var(--ap-navy)]/70">
+                    Your message has been sent successfully. We'll get back to you within 1 business day.
+                  </p>
+                  <button
+                    onClick={() => setFormStatus('idle')}
+                    className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[color:var(--ap-burgundy)] hover:underline"
+                  >
+                    Send another message
+                  </button>
                 </div>
+              ) : (
+                <>
+                  <h2
+                    className="text-xl font-semibold text-[color:var(--ap-navy)]"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
+                    Send Us a Message
+                  </h2>
+                  <p className="mt-2 text-sm text-[color:var(--ap-navy)]/70">
+                    Fill out the form below and we'll get back to you within 1 business day.
+                  </p>
 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-[color:var(--ap-navy)]">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    required
-                    className="mt-1.5 block w-full rounded-lg border border-black/15 bg-white px-4 py-2.5 text-sm text-[color:var(--ap-navy)] placeholder-[color:var(--ap-navy)]/40 focus:border-[color:var(--ap-navy)] focus:outline-none focus:ring-1 focus:ring-[color:var(--ap-navy)]"
-                    placeholder="Tell us about your needs..."
-                  />
-                </div>
+                  {formStatus === 'error' && formError && (
+                    <div className="mt-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                      {formError}
+                    </div>
+                  )}
 
-                <button
-                  type="submit"
-                  className="inline-flex h-12 w-full items-center justify-center rounded-lg bg-[color:var(--ap-burgundy)] text-sm font-semibold text-white transition-colors hover:brightness-110"
-                >
-                  Send Message
-                </button>
-              </form>
+                  <form onSubmit={handleSubmit} className="mt-6 space-y-5">
+                    <div className="grid gap-5 sm:grid-cols-2">
+                      <div>
+                        <label htmlFor="firstName" className="block text-sm font-medium text-[color:var(--ap-navy)]">
+                          First Name <span className="text-[color:var(--ap-burgundy)]">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          id="firstName"
+                          name="firstName"
+                          required
+                          className="mt-1.5 block w-full rounded-lg border border-black/15 bg-white px-4 py-2.5 text-sm text-[color:var(--ap-navy)] placeholder-[color:var(--ap-navy)]/40 focus:border-[color:var(--ap-navy)] focus:outline-none focus:ring-1 focus:ring-[color:var(--ap-navy)]"
+                          placeholder="John"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="lastName" className="block text-sm font-medium text-[color:var(--ap-navy)]">
+                          Last Name
+                        </label>
+                        <input
+                          type="text"
+                          id="lastName"
+                          name="lastName"
+                          className="mt-1.5 block w-full rounded-lg border border-black/15 bg-white px-4 py-2.5 text-sm text-[color:var(--ap-navy)] placeholder-[color:var(--ap-navy)]/40 focus:border-[color:var(--ap-navy)] focus:outline-none focus:ring-1 focus:ring-[color:var(--ap-navy)]"
+                          placeholder="Smith"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid gap-5 sm:grid-cols-2">
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-[color:var(--ap-navy)]">
+                          Email <span className="text-[color:var(--ap-burgundy)]">*</span>
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          className="mt-1.5 block w-full rounded-lg border border-black/15 bg-white px-4 py-2.5 text-sm text-[color:var(--ap-navy)] placeholder-[color:var(--ap-navy)]/40 focus:border-[color:var(--ap-navy)] focus:outline-none focus:ring-1 focus:ring-[color:var(--ap-navy)]"
+                          placeholder="john@example.com"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="phone" className="block text-sm font-medium text-[color:var(--ap-navy)]">
+                          Phone <span className="text-[color:var(--ap-burgundy)]">*</span>
+                        </label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          className="mt-1.5 block w-full rounded-lg border border-black/15 bg-white px-4 py-2.5 text-sm text-[color:var(--ap-navy)] placeholder-[color:var(--ap-navy)]/40 focus:border-[color:var(--ap-navy)] focus:outline-none focus:ring-1 focus:ring-[color:var(--ap-navy)]"
+                          placeholder="(555) 555-5555"
+                        />
+                      </div>
+                    </div>
+                    <p className="!mt-1 text-xs text-[color:var(--ap-navy)]/50">* Email or Phone required</p>
+
+                    <div>
+                      <label htmlFor="service" className="block text-sm font-medium text-[color:var(--ap-navy)]">
+                        Service Interest <span className="text-[color:var(--ap-burgundy)]">*</span>
+                      </label>
+                      <select
+                        id="service"
+                        name="service"
+                        required
+                        className="mt-1.5 block w-full rounded-lg border border-black/15 bg-white px-4 py-2.5 text-sm text-[color:var(--ap-navy)] focus:border-[color:var(--ap-navy)] focus:outline-none focus:ring-1 focus:ring-[color:var(--ap-navy)]"
+                      >
+                        <option value="">Select a service...</option>
+                        <option value="individual-tax">Individual Tax Preparation</option>
+                        <option value="business-tax">Business Tax Preparation</option>
+                        <option value="bookkeeping">Bookkeeping</option>
+                        <option value="payroll">Payroll Services</option>
+                        <option value="planning">Financial Planning</option>
+                        <option value="consulting">Business Consulting</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium text-[color:var(--ap-navy)]">
+                        Message <span className="text-[color:var(--ap-burgundy)]">*</span>
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows={4}
+                        required
+                        className="mt-1.5 block w-full rounded-lg border border-black/15 bg-white px-4 py-2.5 text-sm text-[color:var(--ap-navy)] placeholder-[color:var(--ap-navy)]/40 focus:border-[color:var(--ap-navy)] focus:outline-none focus:ring-1 focus:ring-[color:var(--ap-navy)]"
+                        placeholder="Tell us about your needs..."
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={formStatus === 'submitting'}
+                      className="inline-flex h-12 w-full items-center justify-center rounded-lg bg-[color:var(--ap-burgundy)] text-sm font-semibold text-white transition-colors hover:brightness-110 disabled:opacity-70"
+                    >
+                      {formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
+                    </button>
+                  </form>
+                </>
+              )}
             </div>
           </div>
         </section>
