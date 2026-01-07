@@ -184,7 +184,7 @@ export default function ContactPage() {
                 Fill out the form below and we'll get back to you within 1 business day.
               </p>
 
-              <form className="mt-6 space-y-5">
+              <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" className="mt-6 space-y-5">
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-medium text-[color:var(--ap-navy)]">
@@ -194,6 +194,7 @@ export default function ContactPage() {
                       type="text"
                       id="firstName"
                       name="firstName"
+                      required
                       className="mt-1.5 block w-full rounded-lg border border-black/15 bg-white px-4 py-2.5 text-sm text-[color:var(--ap-navy)] placeholder-[color:var(--ap-navy)]/40 focus:border-[color:var(--ap-navy)] focus:outline-none focus:ring-1 focus:ring-[color:var(--ap-navy)]"
                       placeholder="John"
                     />
@@ -206,6 +207,7 @@ export default function ContactPage() {
                       type="text"
                       id="lastName"
                       name="lastName"
+                      required
                       className="mt-1.5 block w-full rounded-lg border border-black/15 bg-white px-4 py-2.5 text-sm text-[color:var(--ap-navy)] placeholder-[color:var(--ap-navy)]/40 focus:border-[color:var(--ap-navy)] focus:outline-none focus:ring-1 focus:ring-[color:var(--ap-navy)]"
                       placeholder="Smith"
                     />
@@ -220,6 +222,7 @@ export default function ContactPage() {
                     type="email"
                     id="email"
                     name="email"
+                    required
                     className="mt-1.5 block w-full rounded-lg border border-black/15 bg-white px-4 py-2.5 text-sm text-[color:var(--ap-navy)] placeholder-[color:var(--ap-navy)]/40 focus:border-[color:var(--ap-navy)] focus:outline-none focus:ring-1 focus:ring-[color:var(--ap-navy)]"
                     placeholder="john@example.com"
                   />
@@ -266,6 +269,7 @@ export default function ContactPage() {
                     id="message"
                     name="message"
                     rows={4}
+                    required
                     className="mt-1.5 block w-full rounded-lg border border-black/15 bg-white px-4 py-2.5 text-sm text-[color:var(--ap-navy)] placeholder-[color:var(--ap-navy)]/40 focus:border-[color:var(--ap-navy)] focus:outline-none focus:ring-1 focus:ring-[color:var(--ap-navy)]"
                     placeholder="Tell us about your needs..."
                   />
