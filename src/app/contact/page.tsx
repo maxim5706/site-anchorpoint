@@ -195,7 +195,32 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="mt-10 rounded-2xl border border-black/10 bg-[color:var(--ap-navy)] p-6">
+              <div className="mt-8 overflow-hidden rounded-2xl border border-black/10">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3352.8!2d-80.0325!3d32.9812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fe7a3c8b8b8b8b%3A0x0!2s300%20Red%20Bank%20Rd%2C%20Goose%20Creek%2C%20SC%2029445!5e0!3m2!1sen!2sus!4v1704500000000!5m2!1sen!2sus"
+                  width="100%"
+                  height="200"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Anchor Point Accounting Location"
+                />
+                <a
+                  href="https://maps.google.com/?q=300+Red+Bank+Rd,+Goose+Creek,+SC+29445"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-center gap-2 bg-white px-4 py-3 text-sm font-medium text-[color:var(--ap-navy)] transition-colors hover:bg-[color:var(--ap-cream)]"
+                >
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  Get Directions
+                </a>
+              </div>
+
+              <div className="mt-6 rounded-2xl border border-black/10 bg-[color:var(--ap-navy)] p-6">
                 <p className="text-sm font-semibold text-white">Existing Client?</p>
                 <p className="mt-2 text-sm leading-7 text-white/70">
                   Use the secure portal to share documents, track requests, and communicate with our team.
