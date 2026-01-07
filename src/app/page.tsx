@@ -265,7 +265,7 @@ export default function Home() {
                   </div>
                   <h3 className="font-semibold text-[color:var(--ap-navy)]">Individual Tax Prep</h3>
                 </div>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-[color:var(--ap-navy)]/60">
+                <p className="mt-3 flex-1 text-base leading-relaxed text-[color:var(--ap-navy)]/60">
                   Expert preparation for individuals and families—accurate filings, maximum deductions.
                 </p>
                 <p className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[color:var(--ap-burgundy)] group-hover:underline">
@@ -285,7 +285,7 @@ export default function Home() {
                   </div>
                   <h3 className="font-semibold text-[color:var(--ap-navy)]">Business Tax & Consulting</h3>
                 </div>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-[color:var(--ap-navy)]/60">
+                <p className="mt-3 flex-1 text-base leading-relaxed text-[color:var(--ap-navy)]/60">
                   Strategic tax planning and preparation for businesses of all sizes.
                 </p>
                 <p className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[color:var(--ap-burgundy)] group-hover:underline">
@@ -305,7 +305,7 @@ export default function Home() {
                   </div>
                   <h3 className="font-semibold text-[color:var(--ap-navy)]">Bookkeeping</h3>
                 </div>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-[color:var(--ap-navy)]/60">
+                <p className="mt-3 flex-1 text-base leading-relaxed text-[color:var(--ap-navy)]/60">
                   Monthly bookkeeping with clean categorization and actionable reports.
                 </p>
                 <p className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[color:var(--ap-burgundy)] group-hover:underline">
@@ -325,7 +325,7 @@ export default function Home() {
                   </div>
                   <h3 className="font-semibold text-[color:var(--ap-navy)]">Non-Profit Tax Prep</h3>
                 </div>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-[color:var(--ap-navy)]/60">
+                <p className="mt-3 flex-1 text-base leading-relaxed text-[color:var(--ap-navy)]/60">
                   Specialized preparation for 501(c)(3) and other non-profit organizations.
                 </p>
                 <p className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[color:var(--ap-burgundy)] group-hover:underline">
