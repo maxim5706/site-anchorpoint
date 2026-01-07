@@ -191,21 +191,21 @@ export default function MobileNav({ currentPage = "home" }: MobileNavProps) {
                 <div className="space-y-1.5 text-xs">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1.5">
-                      <div className={`h-1.5 w-1.5 rounded-full ${officeStatus.weekdayOpen ? 'bg-green-500' : 'bg-white/30'}`} />
+                      <div className={`h-2 w-2 rounded-full ${officeStatus.weekdayOpen ? 'bg-green-500' : 'bg-red-500'}`} />
                       <span className="text-white/70">M–F</span>
                     </div>
                     <span className="font-medium text-white">9–5</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1.5">
-                      <div className={`h-1.5 w-1.5 rounded-full ${officeStatus.saturdayOpen ? 'bg-green-500' : 'bg-white/30'}`} />
+                      <div className={`h-2 w-2 rounded-full ${officeStatus.saturdayOpen ? 'bg-green-500' : 'bg-red-500'}`} />
                       <span className="text-white/70">Sat</span>
                     </div>
                     <span className="font-medium text-white">10–4</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1.5">
-                      <div className="h-1.5 w-1.5 rounded-full bg-white/30" />
+                      <div className="h-2 w-2 rounded-full bg-red-500" />
                       <span className="text-white/40">Sun</span>
                     </div>
                     <span className="text-white/40">Closed</span>
