@@ -9,14 +9,11 @@ function getOfficeStatus() {
   const day = eastern.getDay();
   const hour = eastern.getHours();
   
-  // Monday-Friday: 9 AM - 5 PM ET
+  // Monday-Friday: 10 AM - 4 PM ET
   if (day >= 1 && day <= 5) {
-    return { weekdayOpen: hour >= 9 && hour < 17, saturdayOpen: false };
+    return { weekdayOpen: hour >= 10 && hour < 16, saturdayOpen: false };
   }
-  // Saturday: 10 AM - 4 PM ET
-  if (day === 6) {
-    return { weekdayOpen: false, saturdayOpen: hour >= 10 && hour < 16 };
-  }
+  // Saturday & Sunday: Closed
   return { weekdayOpen: false, saturdayOpen: false };
 }
 
@@ -194,14 +191,14 @@ export default function MobileNav({ currentPage = "home" }: MobileNavProps) {
                       <div className={`h-2 w-2 rounded-full ${officeStatus.weekdayOpen ? 'bg-green-500' : 'bg-red-500'}`} />
                       <span className="text-white/70">M–F</span>
                     </div>
-                    <span className="font-medium text-white">9–5</span>
+                    <span className="font-medium text-white">10–4</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1.5">
-                      <div className={`h-2 w-2 rounded-full ${officeStatus.saturdayOpen ? 'bg-green-500' : 'bg-red-500'}`} />
-                      <span className="text-white/70">Sat</span>
+                      <div className="h-2 w-2 rounded-full bg-red-500" />
+                      <span className="text-white/40">Sat</span>
                     </div>
-                    <span className="font-medium text-white">10–4</span>
+                    <span className="text-white/40">Closed</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1.5">

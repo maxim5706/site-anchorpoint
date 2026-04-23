@@ -40,7 +40,7 @@ export default function Footer() {
               <p className="text-sm font-medium text-white">(843) 797-5185</p>
               <p className="text-sm text-[color:var(--ap-cream)]/60">Accounting@teamanchorpoint.com</p>
               <p className="mt-2 text-xs text-[color:var(--ap-cream)]/40">300 Red Bank Rd, Goose Creek, SC 29445</p>
-              <p className="text-xs text-[color:var(--ap-cream)]/40">Mon–Fri 9–5 · Sat 10–4</p>
+              <p className="text-xs text-[color:var(--ap-cream)]/40">Mon–Fri 10–4</p>
             </div>
           </div>
         </div>
